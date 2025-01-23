@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Intelli-Tech/static/css/main.802cabdb.css",
-    "main.js": "/Intelli-Tech/static/js/main.a78e38ac.js",
+    "main.js": "/Intelli-Tech/static/js/main.f1bbac14.js",
     "static/media/IT1.png": "/Intelli-Tech/static/media/IT1.54ce5ed4e178f66b2e38.png",
     "static/media/slick.svg": "/Intelli-Tech/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Intelli-Tech/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -9,10 +9,10 @@
     "static/media/slick.woff": "/Intelli-Tech/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Intelli-Tech/index.html",
     "main.802cabdb.css.map": "/Intelli-Tech/static/css/main.802cabdb.css.map",
-    "main.a78e38ac.js.map": "/Intelli-Tech/static/js/main.a78e38ac.js.map"
+    "main.f1bbac14.js.map": "/Intelli-Tech/static/js/main.f1bbac14.js.map"
   },
   "entrypoints": [
     "static/css/main.802cabdb.css",
-    "static/js/main.a78e38ac.js"
+    "static/js/main.f1bbac14.js"
   ]
 }
