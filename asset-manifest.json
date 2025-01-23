@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Intelli-Tech/static/css/main.802cabdb.css",
-    "main.js": "/Intelli-Tech/static/js/main.cfe2b62c.js",
+    "main.css": "/Intelli-Tech/static/css/main.89f08212.css",
+    "main.js": "/Intelli-Tech/static/js/main.bb47502d.js",
     "static/media/IT1.png": "/Intelli-Tech/static/media/IT1.54ce5ed4e178f66b2e38.png",
     "static/media/slick.svg": "/Intelli-Tech/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Intelli-Tech/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Intelli-Tech/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Intelli-Tech/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Intelli-Tech/index.html",
-    "main.802cabdb.css.map": "/Intelli-Tech/static/css/main.802cabdb.css.map",
-    "main.cfe2b62c.js.map": "/Intelli-Tech/static/js/main.cfe2b62c.js.map"
+    "main.89f08212.css.map": "/Intelli-Tech/static/css/main.89f08212.css.map",
+    "main.bb47502d.js.map": "/Intelli-Tech/static/js/main.bb47502d.js.map"
   },
   "entrypoints": [
-    "static/css/main.802cabdb.css",
-    "static/js/main.cfe2b62c.js"
+    "static/css/main.89f08212.css",
+    "static/js/main.bb47502d.js"
   ]
 }
