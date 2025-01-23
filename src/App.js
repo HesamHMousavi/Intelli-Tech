@@ -6,6 +6,8 @@ import Example from "./Components/Pages/Example/Example";
 import Packages from "./Components/Pages/Packages/Packages";
 import Contact from "./Components/Pages/Contact/Contact";
 
+const basename = process.env.NODE_ENV === "production" ? "/Intelli-Tech" : "/";
+
 function App() {
   return (
     <Router>

@@ -4,6 +4,7 @@ import "../util/colors.css";
 import "./Footer.css";
 import img from "../../Images/IT1.png";
 import { ImFacebook } from "react-icons/im";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
@@ -35,18 +36,40 @@ const Footer = () => {
         <div className="item">
           <h2 className="title-4">Links</h2>
           <div className="sec">
-            <a className="p-5" href="/">
-              Home Page
-            </a>
-            <a className="p-5" href="/">
+            <Link className="p-5" to="/" onClick={() => window.scrollTo(0, 0)}>
+              Home
+            </Link>
+
+            <Link
+              className="p-5"
+              to="/packages"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Packages
-            </a>
-            <a className="p-5" href="/">
+            </Link>
+
+            <Link
+              className="p-5"
+              to="/process"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               How we do it
-            </a>
-            <a className="p-5" href="/">
+            </Link>
+
+            <Link
+              className="p-5"
+              to="/example"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Our Work
-            </a>
+            </Link>
+            <Link
+              className="p-5"
+              to="/contact"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              Contact us
+            </Link>
           </div>
         </div>
         <div className="item">

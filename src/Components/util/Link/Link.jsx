@@ -1,13 +1,18 @@
 import React from "react";
 // /import "../../util/colors.css";
+import { Link } from "react-router-dom";
 import "./Link.css";
 
-const Link = ({ name = "link", link }) => {
+const LinkP = ({ name = "link", link }) => {
   return (
-    <a className="link" href={`/${link}`}>
+    <Link
+      className="link"
+      to={`/${link}`}
+      onClick={() => window.scrollTo(0, 0)}
+    >
       {name}
-    </a>
+    </Link>
   );
 };
 
-export default Link;
+export default LinkP;

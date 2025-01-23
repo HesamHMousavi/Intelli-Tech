@@ -24,7 +24,7 @@
   margin-top: 10px;
   padding-bottom:5px ;
 }
-.nav a{
+.nav .link2{
   font-weight: 300;
   width: 100%;
   padding: 10px;
@@ -34,7 +34,7 @@
   transition: var(--trans);
 
 }
-.nav a:hover{
+.nav .link2:hover{
   color: var(--blue-dark) !important;
   border-radius: 5px;
   background-color: var(--gray-color-5) !important;
