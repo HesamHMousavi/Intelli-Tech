@@ -1,0 +1,164 @@
+/* Container to center everything and provide a background */
+.solar-container {
+  position: relative;
+  width: 100%;
+  height:100%; 
+  background-color: transparent; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Sun */
+.sun {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #ffa73b 40%,
+    #ffc107 70%,
+    #ff9800 85%,
+    #ff5722 100%
+  );
+  box-shadow: 0 0 50px rgba(255, 193, 7, 0.5);
+  z-index: 10;
+}
+.sun::before {
+  content: "";
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 87, 34, 0.45),
+    transparent 70%
+  );
+  animation: pulsate 3s infinite ease-in-out;
+  z-index: -1; 
+}
+
+/* Orbits - each orbit is a ring that rotates */
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: rotateOrbit linear infinite;
+  pointer-events: none; 
+}
+
+/* Each orbit has a different diameter (distance from the sun) and speed */
+.orbit-1 {
+  width: 200px;
+  height:200px;
+  animation-duration: 14s;
+}
+.orbit-2 {
+  width: 250px;
+  height: 250px;
+  animation-duration: 18s;
+  /* border: 1px solid #ccc; */
+}
+.orbit-3 {
+  width: 300px;
+  height: 300px;
+  /* border: 1px solid #ccc; */
+  animation-duration: 24s;
+}
+.orbit-4 {
+  width: 350px;
+  height: 350px;
+  /* border: 1px solid #ccc; */
+  animation-duration: 30s;
+}
+.orbit-5 {
+  width: 400px;
+  height: 400px;
+  /* border: 1px solid #ccc; */
+  animation-duration: 34s;
+}
+.orbit-6 {
+  width: 450px;
+  height: 450px;
+  /* border: 1px solid #ccc; */
+  animation-duration: 40s;
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulsate {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
+}
+
+
+/* Planets */
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/* Each planet placed at the edge of its orbit
+   The planet's left or top offset positions it at the ring's circumference.
+   For easy alignment, we'll shift half the orbit's width. */
+
+.planet-1 {
+  width: 5px;
+  height: 5px;
+  background-color: #fffcfc; /* Example: green-ish planet */
+  transform: translate(-50%, -50%) translateX(100px); /* half of orbit-1's width (250 / 2) */
+}
+
+.planet-2 {
+  width: 10px;
+  height: 10px;
+  background-color: #00b3ff; /* Blue planet */
+  transform: translate(-50%, -50%) translateX(125px); /* half of orbit-2's width (350 / 2) */
+}
+
+.planet-3 {
+  width: 9px;
+  height: 9px;
+  background-color: #ff7f00; /* Purple planet */
+  transform: translate(-50%, -50%) translateX(150px); /* half of orbit-3's width (450 / 2) */
+}
+
+.planet-4 {
+  width: 15px;
+  height: 15px;
+  background-color: #ffb84d; /* Red planet */
+  transform: translate(-50%, -50%) translateX(175px); /* half of orbit-4's width (550 / 2) */
+}
+.planet-5 {
+  width: 7px;
+  height: 7px;
+  background-color: #57eb78; /* Red planet */
+  transform: translate(-50%, -50%) translateX(200px); /* half of orbit-4's width (550 / 2) */
+}
+.planet-6 {
+  width: 10px;
+  height: 10px;
+  background-color: #e121d1ed; /* Red planet */
+  transform: translate(-50%, -50%) translateX(225px); /* half of orbit-4's width (550 / 2) */
+}

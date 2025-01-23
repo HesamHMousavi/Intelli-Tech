@@ -1,0 +1,55 @@
+.nav {
+    height: 100%;
+    width: 300px; /* Adjust width */
+    background-color: var(--gray-color-4);
+    position: fixed;
+    top: 70px;
+    right: -300px; /* Start off-screen */
+    z-index: 51;
+    transition: transform 0.3s ease-in-out; /* Smooth sliding */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1);
+
+  }
+  .nav .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--gray-color-5);
+  transition: var(--trans);
+  margin-top: 10px;
+  padding-bottom:5px ;
+}
+.nav a{
+  font-weight: 300;
+  width: 100%;
+  padding: 10px;
+  font-size: var(--regular-text);
+  text-decoration: none;
+  color: var(--gray-color-9);
+  transition: var(--trans);
+
+}
+.nav a:hover{
+  color: var(--blue-dark) !important;
+  border-radius: 5px;
+  background-color: var(--gray-color-5) !important;
+  
+}
+  
+  /* When isShow is true, slide in */
+  .nav.active {
+    transform: translateX(-300px);
+  }
+  
+  /* When isShow is false, slide out */
+  .nav.hidden {
+    transform: translateX(0);
+  }
+
+  
+  

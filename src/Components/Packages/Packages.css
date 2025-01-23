@@ -1,0 +1,134 @@
+.packs-con{
+    background-color: var(--gray-color-3);
+}
+.packs{
+    padding: 3rem 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pack{
+    width: 370px;
+    margin: 1.5rem;
+    background-color: var(--white-color);
+}
+.pack header{
+    background-color: var(--blue-dark);
+    padding: 2rem 10px;
+}
+.pack header h3{
+    text-align: center;
+    margin: 0;
+    font-size: var(--title3);
+    font-weight: 350;
+    color: var(--white-color);
+}
+.pack header p{
+    text-align: center;
+    line-height: 23px;
+    margin-top: 1rem;
+    font-weight: 250;
+    font-size: var(--small-text);
+    color: var(--white-color);
+}
+.pack main h1{
+    text-align: center;
+    line-height: 20px;
+    margin-top: 1rem;
+    font-size: var(--title3);
+    font-weight: 350;
+    color: var(--gray-color-1);
+    margin: 0 3rem ;
+    padding: 2rem 3rem ;
+    border-bottom: 1px solid var(--gray-color-4);
+}
+.pack main .link-con p{
+    text-decoration: none;
+    color: var(--blue-dark);
+    margin: 0;
+}
+.pack main .link-con{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pack main ul{
+    padding: 1rem;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pack main ul li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px 0 ;
+    margin: 5px 0;
+}
+.pack main ul li p{
+    color: var(--gray-color-9);
+    margin: 0;
+    font-size: var(--small-text);
+    margin-left:10px ;
+    font-weight: 300;
+}
+.pack footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem ;
+}
+.no{
+    color: var(--gray-color-9);
+}
+
+.text-con {
+    padding-top: 3rem;
+}
+.text-con h2, .text-con p{
+    text-align: center;
+}
+.text-con h2{
+    font-weight: 600;
+    font-size: var(--title2);
+    color: var(--blue-dark);
+}
+.text-con p{
+    /* text-align: justify; */
+    font-weight: 350;
+    font-size: var(--regular-text);
+    color: var(--gray-color-1);
+}
+
+@media (max-width:768px) {
+    .pack header p{
+        font-weight: 350;
+    }
+    .pack main ul li p{
+        font-weight: 400;
+    }
+    .pack main h1{
+        font-size: var(--title2);
+        font-weight: 500;
+    }
+    .pack{
+        width: 95% !important;
+        /* margin-bottom: 3rem; */
+    }
+}
+@media(max-width:1199px) {
+    .packs{
+        flex-direction: column;
+    }
+    .text-con{
+        padding: 1rem;
+    }
+    .pack{
+        width: 65%;
+        margin-bottom: 3rem;
+    }
+}

@@ -1,0 +1,65 @@
+:root {
+    --white-color: #ffffff;
+    --gray-color-1: #949494;
+    --gray-color-2: #515151;
+    --gray-color-3: #F8F8F8;
+    --gray-color-4: #f2f2f2;
+    --gray-color-5: #e6e6e6;
+    --gray-color-6: #ccc;
+    --gray-color-7: #b9b9b9;
+    --gray-color-8: #EBEBEB;
+    --gray-color-9: #707070;
+    --red-color-1: #FF4F00;
+    --cream-color: #d8bd91;
+    --blue-dark: #386ca0;
+    --blue-darker: #3B5670;
+    --blue-light: #3fb0da;
+    --blue-lighter: #a0c8f0;
+
+
+    --small-text: 18px;
+    --regular-text: 20px;
+    --large-text: 24px;
+
+    --sub-title: 24px;
+    --title1: 28px;
+    --title2: 42px;
+    --title3: 38px;
+    --title4: 30px;
+    --title5: 30px;
+
+    --border-rad: 5px;
+    --trans: all 0.2s; 
+}
+
+
+@media (max-width: 575px) {
+    :root {
+        --sub-title: 18px;
+        --title1: 20px;
+        --title2: 28px;
+        --title3: 24px;
+        --title4: 18px;
+        --title5: 22px;
+        
+        --small-text: 16px;
+        --regular-text: 15px;
+        --large-text: 20px;
+
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    :root {
+        --sub-title: 22px;
+        --title1: 24px;
+        --title2: 36px;
+        --title3: 32px;
+        --title4: 22px;
+        --title5: 30px;
+        --small-text: 14px;
+        --regular-text: 14px;
+        --large-text: 20px;
+
+    }
+}
