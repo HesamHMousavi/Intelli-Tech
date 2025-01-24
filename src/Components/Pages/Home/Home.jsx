@@ -8,6 +8,9 @@ import Features from "../../Features/Features";
 import Footer from "../../Footer/Footer";
 import FAQ1 from "../../FAQ1/FAQ1";
 import img from "../../../Images/IT1.png";
+import img1 from "../../../Images/Project1/img1.png";
+import img2 from "../../../Images/Project1/img2.png";
+import img3 from "../../../Images/Project1/img3.png";
 
 const Home = () => {
   const btn1 = { name: "Find Out More" };
@@ -40,7 +43,7 @@ const Home = () => {
         p={
           "This project involves creating a simple yet professional online presence tailored to the client’s specific needs. Typically, it includes designing and developing up to five core pages (e.g., Home, About, Services, Contact, and Blog), integrating basic branding elements (logo, color palette, fonts), and ensuring mobile-friendly responsiveness."
         }
-        img={img}
+        img={[img1, img2, img3]}
       />
       <Banner2
         height="140px"

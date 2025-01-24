@@ -21,6 +21,9 @@
 .hero-con2{
   margin: auto;
 }
+.bg-gary:nth-child(2n+1){
+  background-color: var(--gray-color-8);
+}
 .hero-con::before {
     content: "";
     position: absolute;
