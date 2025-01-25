@@ -6,6 +6,7 @@ import img from "../../Images/IT1.png";
 import { ImFacebook } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link as LinkRouter } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,9 +29,9 @@ const Footer = () => {
         <div className="item">
           <h2 className="title-4">Contact</h2>
           <div className="sec">
-            <p className="p-5">email@gmail.com</p>
-            <p className="p-5">email@gmail.com</p>
-            <p className="p-5">email@gmail.com</p>
+            <p className="p-5">webnova.labs@outlook.com</p>
+            {/* <p className="p-5">email@gmail.com</p>
+            <p className="p-5">email@gmail.com</p> */}
           </div>
         </div>
         <div className="item">
@@ -75,12 +76,9 @@ const Footer = () => {
         <div className="item">
           <h2 className="title-4">More Links</h2>
           <div className="sec">
-            <a className="p-5" href="/">
-              Contact
-            </a>
-            <a className="p-5" href="/">
-              FAQ
-            </a>
+            <LinkRouter className="p-5" to="/faqs">
+              FAQs
+            </LinkRouter>
           </div>
         </div>
       </div>

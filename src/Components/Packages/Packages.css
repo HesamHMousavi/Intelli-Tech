@@ -66,7 +66,7 @@
     display: flex;
     align-items: center;
     padding: 5px 0 ;
-    margin: 5px 0;
+    margin-top: 2px;
 }
 .pack main ul li p{
     color: var(--gray-color-9);
@@ -80,7 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem ;
+    padding:0 2rem 2rem 2rem;
 }
 .no{
     color: var(--gray-color-9);
@@ -109,7 +109,7 @@
         font-weight: 350;
     }
     .pack main ul li p{
-        font-weight: 400;
+        font-weight: 350;
     }
     .pack main h1{
         font-size: var(--title2);

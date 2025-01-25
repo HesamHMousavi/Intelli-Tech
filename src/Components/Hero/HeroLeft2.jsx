@@ -1,19 +1,26 @@
-import React, { useState, useEffect } from "react";
-import "./Hero.css";
+import React, { useState, useEffect, useContext } from "react";
+import { ContentContext } from "../../Context/Content/ContentState";
+import { useNavigate } from "react-router-dom";
 import ImgSlider from "./Slider";
+import "./Hero.css";
 
-const HeroLeft2 = ({ btn1, btn2, t, subt, p, img, isLeftFirst = true }) => {
+const HeroLeft2 = ({ Project, isLeftFirst = true }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
-
+  const { SetContent } = useContext(ContentContext);
+  const nav = useNavigate();
   // Update state when window resizes
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1200);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const onClick = () => {
+    SetContent(Project);
+    nav("/project");
+  };
 
   return (
     <div className="bg-gary">
@@ -21,20 +28,23 @@ const HeroLeft2 = ({ btn1, btn2, t, subt, p, img, isLeftFirst = true }) => {
         <div className="hero heroHeight mar-top mar-bottom max-wid">
           {isMobile ? (
             <>
-              {/* Right Section First (for mobile) */}
               <div className="right2">
-                <ImgSlider imgs={img} />
+                <ImgSlider imgs={Project.Imgs} />
               </div>
-              {/* Left Section */}
               <div className="left2">
-                {t && <h2 className="title-2 mar-top">{t}</h2>}
-                {subt && <h4 className="title-4">{subt}</h4>}
-                {p && <p className="p-3">{p}</p>}
+                {Project.Title && (
+                  <h2 className="title-2 mar-top">{Project.Title}</h2>
+                )}
+                {Project.SubTitle && (
+                  <h4 className="title-4">{Project.SubTitle}</h4>
+                )}
+                {Project.Description && (
+                  <p className="p-3">{Project.Description[0]}</p>
+                )}
                 <div className="btn-con">
-                  {btn1 && (
-                    <button className="btn mar-right">{btn1.name}</button>
-                  )}
-                  {btn2 && <button className="btn">{btn2.name}</button>}
+                  <button className="btn mar-right" onClick={onClick}>
+                    Find Out More
+                  </button>
                 </div>
               </div>
             </>
@@ -45,37 +55,47 @@ const HeroLeft2 = ({ btn1, btn2, t, subt, p, img, isLeftFirst = true }) => {
                 <>
                   {/* Left Section */}
                   <div className="left2">
-                    {t && <h2 className="title-2 mar-top">{t}</h2>}
-                    {subt && <h4 className="title-4">{subt}</h4>}
-                    {p && <p className="p-3">{p}</p>}
+                    {Project.Title && (
+                      <h2 className="title-2 mar-top">{Project.Title}</h2>
+                    )}
+                    {Project.SubTitle && (
+                      <h4 className="title-4">{Project.SubTitle}</h4>
+                    )}
+                    {Project.Description && (
+                      <p className="p-3">{Project.Description[0]}</p>
+                    )}
                     <div className="btn-con">
-                      {btn1 && (
-                        <button className="btn mar-right">{btn1.name}</button>
-                      )}
-                      {btn2 && <button className="btn">{btn2.name}</button>}
+                      <button className="btn mar-right" onClick={onClick}>
+                        Find Out More
+                      </button>
                     </div>
                   </div>
                   {/* Right Section */}
                   <div className="right2">
-                    <ImgSlider imgs={img} />
+                    <ImgSlider imgs={Project.Imgs} />
                   </div>
                 </>
               ) : (
                 <>
                   {/* Right Section First */}
                   <div className="right2">
-                    <ImgSlider imgs={img} />
+                    <ImgSlider imgs={Project.Imgs} />
                   </div>
                   {/* Left Section */}
                   <div className="left2">
-                    {t && <h2 className="title-2 mar-top">{t}</h2>}
-                    {subt && <h4 className="title-4">{subt}</h4>}
-                    {p && <p className="p-3">{p}</p>}
+                    {Project.Title && (
+                      <h2 className="title-2 mar-top">{Project.Title}</h2>
+                    )}
+                    {Project.SubTitle && (
+                      <h4 className="title-4">{Project.SubTitle}</h4>
+                    )}
+                    {Project.Description && (
+                      <p className="p-3">{Project.Description}</p>
+                    )}
                     <div className="btn-con">
-                      {btn1 && (
-                        <button className="btn mar-right">{btn1.name}</button>
-                      )}
-                      {btn2 && <button className="btn">{btn2.name}</button>}
+                      <button className="btn mar-right" onClick={onClick}>
+                        Find Out More
+                      </button>
                     </div>
                   </div>
                 </>

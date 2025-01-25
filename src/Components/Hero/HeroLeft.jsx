@@ -19,8 +19,16 @@ const Hero = ({ btn1, btn2, t, subt, p, img }) => {
           {subt && <h4 className="title-4">{subt}</h4>}
           {p && <p className="p-2">{p}</p>}
           <div className="btn-con">
-            {btn1 && <button className="btn mar-right">{btn1.name}</button>}
-            {btn2 && <button className="btn">{btn2.name}</button>}
+            {btn1 && (
+              <button className="btn mar-right" onClick={btn1.onClick}>
+                {btn1.name}
+              </button>
+            )}
+            {btn2 && (
+              <button className="btn" onClick={btn2.onClick}>
+                {btn2.name}
+              </button>
+            )}
           </div>
         </div>
         <div className="right">

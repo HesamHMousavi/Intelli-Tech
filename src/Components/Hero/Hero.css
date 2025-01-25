@@ -1,10 +1,9 @@
 .hero{
     display: flex;
     justify-content: space-between;
-    padding: 3rem;
-    margin: 2rem 0 ;
+    padding: 4rem 3rem;
     height: fit-content;
-    align-items: center;
+    /* align-items: center; */
     z-index: 50;
     height: 1000px;
 }
@@ -119,7 +118,7 @@
     
   }
   .hero .left h2{
-    margin: 3rem 0 ;
+    margin: 3rem 0;
     
   }
   .hero .left .btn-con{
@@ -151,6 +150,11 @@
   }
   .hero .left2 p{
     padding: 1.4rem 0 ;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .hero .left2 h2{
+    margin: 0 ;
   }
   .hero .left2 .btn-con {
     display: flex;

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import IT1 from "../../Images/IT1.png";
 import Link from "../util/Link/Link";
-import "../util/core.css";
-import "./Header.css";
 import Menu from "./Menu";
 import Nav from "../nav/Nav";
+import "../util/core.css";
+import "./Header.css";
 
 const Header = () => {
   const [isShow, setShow] = useState(false);
-
+  const nav = useNavigate();
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -28,7 +29,12 @@ const Header = () => {
     <div className="header-con">
       <div className="header max-wid ">
         <div className="left">
-          <img src={IT1} alt="" className="soft-shadow" />
+          <img
+            src={IT1}
+            alt=""
+            className="soft-shadow"
+            onClick={() => nav("/")}
+          />
         </div>
         <div className="right">
           <ul>

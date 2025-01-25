@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const ImgSlider = ({ imgs }) => {
   const settings = {
     infinite: true,
@@ -15,12 +14,11 @@ const ImgSlider = ({ imgs }) => {
     arrows: false, // Hides the arrows
   };
 
-
   return (
     <Slider {...settings}>
       {imgs.map((img, index) => (
         <div key={index}>
-          <img src={img} alt={`Slide ${index}`} />
+          <img src={img} key={index} alt={`Slide ${index}`} />
         </div>
       ))}
     </Slider>

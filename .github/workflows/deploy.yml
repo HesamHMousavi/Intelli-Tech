@@ -1,0 +1,29 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Runs when you push to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install # Adjust based on your package manager
+
+      - name: Set Environment Variables
+        run: echo "REACT_APP_FORM_ID=${{ secrets.REACT_APP_FORM_ID }}" >> .env
+
+      - name: Build Project
+        run: npm run build # Adjust if using another framework
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # Deploys to GitHub Pages branch
+          folder: build # Change this if your build folder has a different name

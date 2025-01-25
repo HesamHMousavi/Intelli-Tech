@@ -1,0 +1,109 @@
+.proj-pre{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding:0 2rem 4rem 2rem;
+}
+.back-link{
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    color: var(--blue-dark);
+    padding: 0 2rem;
+}
+.back-link h2{
+    margin-left:5px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.proj-pre .left, .proj-pre .right {
+    min-height: 500px;
+}
+ .proj-pre .right {
+    margin-right: 3.5rem;
+    padding: 0;
+}
+.proj-pre .left{
+    padding: 0 2rem ;
+    border-left: 1px solid var(--gray-color-5);
+}
+.proj-pre .left h1{
+    font-weight: 300;
+}
+.proj-pre .left > p{
+    font-weight: 300;
+    color: var(--gray-color-1);
+    font-size: 20px;
+    line-height: 28px;
+    margin: 10px 0;
+}
+.proj-pre .left ul{
+    padding: 0 15px;
+    margin-top: 2rem !important;
+    list-style: circle;
+}
+.proj-pre .left ul li p{
+    font-weight: 300;
+    color: var(--gray-color-1);
+    font-size: 18px;
+    margin: 5px !important;
+}
+.proj-pre .left button{
+    border: 1px solid var(--blue-dark);
+}
+.mg-2{
+    margin-top: 3rem;
+}
+.mg-1{
+    margin-top: 0;
+    margin-bottom: 2rem ;
+}
+.proj-pre .right{
+    margin-top: 1rem;
+    max-width: 50%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-rad);
+}
+.proj-pre .right img{
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width:576px){
+    .proj-pre .left > p{
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+@media (max-width:768px){
+    .proj-pre {
+        padding:0 1rem 4rem 1rem;
+    }
+    .proj-pre .left{
+        padding: 0 10px;
+    }
+    .back-link{
+        padding: 0 1rem;
+        margin: 10px 0 ;
+    }
+}
+@media (max-width:1275px){
+    .proj-pre{
+        flex-direction: column-reverse;
+    }
+    .proj-pre .right,.proj-pre .left{
+        width: 100% !important;
+        min-height: 0;
+        min-width: 100%;
+    }
+    .proj-pre .left{
+        border: none;
+        margin-top: 3rem ;
+    }
+    .mg-1{
+        margin-top: 1rem ;
+    }
+}

@@ -9,7 +9,7 @@
     padding: 2rem 0;  
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 1rem 10rem;
+    grid-gap: 1rem 2rem;
     
 }
 .faq1 h1{
@@ -41,6 +41,7 @@
 .question p{
     color: var(--gray-color-1);
     font-weight: 350;
+    line-height: 24px;
     font-size: var(--small-text);   
     margin: 10px 5px ;
 }
@@ -60,6 +61,13 @@
     .question{
         border-top: 1px solid var(--gray-color-5);
         padding: 1rem 0 ;
+        border: none !important;
+    }
+    .question p{
+        border-top: 1px solid var(--gray-color-5);
+        padding: 1rem 0 ;
+        font-weight: 450;
+        border: none !important;
     }
 }
 /* Laptops and small desktops */

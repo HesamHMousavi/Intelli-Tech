@@ -19,6 +19,9 @@
     grid-gap: 1rem;
     
 }
+.feature .right p{
+    text-align: start;
+}
 .feature{
     display: flex;
     padding: 0 2rem;

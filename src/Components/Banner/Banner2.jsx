@@ -10,7 +10,11 @@ const Banner2 = ({ height = "80px", bg = "#f2f2f2", p, title, btn }) => {
     >
       <h1 className="title-3 text-white">{title}</h1>
       {p && <p className="p-3 mar-top text-white">{p}</p>}
-      {btn && <button className="btn mar-right ">{btn.name}</button>}
+      {btn && (
+        <button className="btn mar-right" onClick={btn.onClick}>
+          {btn.name}
+        </button>
+      )}
     </div>
   );
 };

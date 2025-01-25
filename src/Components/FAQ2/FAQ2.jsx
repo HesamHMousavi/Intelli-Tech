@@ -1,41 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import data from "../../Context/FAQS";
 import "./FAQ2.css";
 import "../util/core.css";
 import "../util/colors.css";
-import { FaChevronDown, FaChevronRight } from "react-icons/fa";
-
-const faqData = [
-  {
-    question: "Medium length question goes here",
-    answer:
-      "Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut.",
-  },
-  {
-    question: "Medium length question goes here",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.",
-  },
-  {
-    question: "Medium length question goes here",
-    answer:
-      "Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.",
-  },
-  {
-    question: "Medium length question goes here",
-    answer:
-      "Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.",
-  },
-  {
-    question: "Medium length question goes here",
-    answer:
-      "Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.",
-  },
-];
 
 const FAQ2 = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const contentRefs = useRef([]);
-
+  const nav = useNavigate();
   useEffect(() => {
     contentRefs.current.forEach((ref, index) => {
       if (ref) {
@@ -56,7 +30,7 @@ const FAQ2 = () => {
         Get some quick answers to your questions by browsing the topics below
       </p>
       <div className="faq-list">
-        {faqData.map((item, index) => (
+        {data.slice(11).map((item, index) => (
           <div
             key={index}
             className={`faq-item ${openIndex === index ? "open" : ""}`}
@@ -75,7 +49,9 @@ const FAQ2 = () => {
           </div>
         ))}
       </div>
-      <button className="btn"> View All FAQs</button>
+      <button className="btn" onClick={() => nav("/faqs")}>
+        View All FAQs
+      </button>
     </div>
   );
 };

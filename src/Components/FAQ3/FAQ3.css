@@ -1,0 +1,24 @@
+.faq3{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5rem 0 ;
+    padding: 0 2rem;
+    grid-gap: 1.5rem;
+}
+.btn-con{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .faq3{
+        padding: 0 1rem !important;
+    }
+}
+@media (max-width: 1199px) {
+    .faq3{
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 3rem;
+    }
+}

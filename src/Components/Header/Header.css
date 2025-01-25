@@ -32,6 +32,7 @@
     width: 65px;
     object-fit: cover;
     display: block; 
+    cursor: pointer;
 }
 .header .left .img2 {
     border-radius: 0;
