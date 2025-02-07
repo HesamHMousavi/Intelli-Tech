@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContentContext } from "../../Context/Content/ContentState";
+import { BiSolidChevronRight } from "react-icons/bi";
+import { CiShoppingBasket } from "react-icons/ci";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 import "../util/core.css";
 import "../util/colors.css";
-import { BiSolidChevronRight } from "react-icons/bi";
-import { Link } from "react-router-dom";
 
 const Nav = ({ isShow }) => {
+  const { Basket } = useContext(ContentContext);
   return (
     <div className={`nav ${isShow ? "active" : "hidden"}`}>
       <div className="item ">
@@ -52,6 +55,22 @@ const Nav = ({ isShow }) => {
         >
           Contact us
         </Link>
+        <BiSolidChevronRight className="icon" />
+      </div>
+      <div className="item">
+        <Link
+          className="link2 align"
+          to="/checkout"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          <CiShoppingBasket size={25} className="ic" />
+          Basket
+        </Link>
+        {Basket?.length > 0 && (
+          <div className="counter-tag-nav">
+            <p>{Basket.length}</p>
+          </div>
+        )}
         <BiSolidChevronRight className="icon" />
       </div>
     </div>

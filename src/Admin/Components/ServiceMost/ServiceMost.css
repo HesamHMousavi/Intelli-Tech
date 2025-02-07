@@ -1,0 +1,55 @@
+.most-services{
+    width: 30%;
+    border: 1px solid var(--light-gray);
+    margin: 20px 0;
+    margin-left : 3rem;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.most-services header{
+    padding: 10px;
+    border: none !important;
+
+}
+.most-services header .dots{
+    cursor: pointer;
+}
+.most-services header .dots div{
+    margin-right: 3px;
+    background-color: var(--dark-gray);
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+}
+.most-services main{
+    padding: 5px !important;
+}
+.most-services main .product{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+    height: 60px;
+    /* border: 1px solid var(--light-gray); */
+    /* margin-top: 10px; */
+}
+.most-services main .product .img{
+    background-color:var(--light-gray) ;
+    border-radius:5px;
+    width: 45px;
+    height: 45px;
+}
+.most-services main .product .name p{
+    margin: 0;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 350;
+}
+.most-services main .product .sales p{
+    text-align: center;
+    cursor: pointer;
+    color: var(--text-color-dark);
+    font-size: 12px;
+    font-weight: 400;
+}

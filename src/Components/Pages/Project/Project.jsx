@@ -27,14 +27,14 @@ const Project = () => {
         <div className="proj-pre">
           <div className="left">
             <h1 className="title-2  mg-1">{Content.Title}</h1>
-            {Content.Description.map((desc, index) => (
+            {Content?.Description?.map((desc, index) => (
               <p key={index} className="p-3">
                 {desc}
               </p>
             ))}
             <h1 className="title-2 mg-2">Key Features</h1>
             <ul>
-              {Content.Features.map((item, index) => (
+              {Content?.Features?.map((item, index) => (
                 <li key={index}>
                   <p className="p-2">{item}</p>
                 </li>

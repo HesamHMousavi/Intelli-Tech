@@ -46,7 +46,7 @@
 }
  
 
-@media (max-width:800px){
+@media (max-width:1000px){
     .more-examples{
         padding: 1rem;
         max-height: none;

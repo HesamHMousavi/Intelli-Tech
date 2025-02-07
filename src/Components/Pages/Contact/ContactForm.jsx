@@ -1,81 +1,119 @@
-import React, { useState } from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import React, { useState, useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { ContentContext } from "../../../Context/Content/ContentState";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaSnapchatGhost } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import "./Contact.css";
 
 const ContactForm = () => {
   const [status, setStatus] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
 
+  const { CreateAlert } = useContext(ContentContext);
+  // Function to update state when input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Function to check if all fields are filled
+  const isFormValid = () => {
+    return Object.values(formData).every((value) => value.trim() !== "");
+  };
+
+  // Submit form with validation
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isFormValid()) {
+      setStatus("Please fill in all fields.");
+      CreateAlert({
+        id: uuidv4(),
+        alert: "Please fill in all fields.",
+        type: "warning",
+      });
+      setTimeout(() => setStatus(""), 1000);
+      return;
+    }
+
     setStatus("Sending...");
 
-    // Collect form data
-    const formData = new FormData(e.target);
     try {
       const response = await fetch(process.env.REACT_APP_FORM_ID, {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
+        headers: { Accept: "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setStatus("Message Sent!");
-        e.target.reset();
+        CreateAlert({
+          id: uuidv4(),
+          alert: "Message Sent!.",
+          type: "success",
+        });
+        setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
         setStatus("Error sending message.");
       }
-      setTimeout(() => {
-        setStatus("");
-      }, 2000);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setStatus("Error sending message.");
     }
+
+    setTimeout(() => setStatus(""), 2000);
   };
 
   return (
     <div className="max-wid">
       <div className="form-con">
-        {/** Display status messages (optional) */}
         <form className="form" onSubmit={handleSubmit}>
           <div className="item2">
-            {/** Make sure to add 'name' attributes to each input */}
             <input
               disabled={status !== ""}
               type="text"
-              name="First Name"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
               placeholder="First Name"
-              required
+              // required
             />
             <input
               disabled={status !== ""}
               type="text"
-              name="Last Name"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
               placeholder="Last Name"
-              required
+              // required
             />
           </div>
           <div className="item1">
             <input
               disabled={status !== ""}
               type="email"
-              name="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email Address"
-              required
+              // required
             />
           </div>
           <div className="item3">
             <textarea
               disabled={status !== ""}
               name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Tell us about your query"
-              required
+              // required
             />
           </div>
-          {status && <h3 className="title-1">{status}</h3>}
           <div className="item4">
             <button disabled={status !== ""} className="btn" type="submit">
               Send
@@ -86,20 +124,47 @@ const ContactForm = () => {
         <div className="socials">
           <h1 className="title-local title-2">Get in touch!</h1>
           <div>
-            <MdEmail size={40} className="iconAll" />
-            <h1 className="title-1">@intelli-Tech </h1>
+            <FaInstagram
+              size={40}
+              className="iconAll"
+              onClick={() =>
+                window.open("https://www.instagram.com/litwebs/", "_blank")
+              }
+            />
+            <h1 className="title-1">@Litwebs </h1>
           </div>
           <div>
-            <FaInstagram size={40} className="iconAll" />
-            <h1 className="title-1">@intelli-Tech </h1>
+            <FaFacebook
+              size={40}
+              className="iconAll"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/people/Lit-Webs/61572395225801/",
+                  "_blank"
+                )
+              }
+            />
+            <h1 className="title-1">@Litwebs </h1>
           </div>
           <div>
-            <FaFacebook size={40} className="iconAll" />
-            <h1 className="title-1">@intelli-Tech </h1>
+            <FaSnapchatGhost
+              size={40}
+              className="iconAll"
+              onClick={() =>
+                window.open("https://www.snapchat.com/add/litwebs", "_blank")
+              }
+            />
+            <h1 className="title-1">@Litwebs </h1>
           </div>
           <div>
-            <FaTwitter size={40} className="iconAll" />
-            <h1 className="title-1">@intelli-Tech </h1>
+            <MdEmail
+              size={40}
+              className="iconAll"
+              onClick={() =>
+                window.open("mailto:litwebs@outlook.co.uk", "_blank")
+              }
+            />
+            <h1 className="title-1">Litwebs@outlook.com</h1>
           </div>
         </div>
       </div>

@@ -1,0 +1,12 @@
+.scroll {
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .services {
+    padding: 2rem; /* Optional padding */
+  }
+  

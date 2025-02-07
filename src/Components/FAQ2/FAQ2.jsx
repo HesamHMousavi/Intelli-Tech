@@ -24,27 +24,27 @@ const FAQ2 = () => {
   };
 
   return (
-    <div className="faq-container">
-      <h2 className="faq-title">FAQ</h2>
+    <div className="faq-client-container">
+      <h2 className="faq-client-title">FAQ</h2>
       <p className="p-3">
         Get some quick answers to your questions by browsing the topics below
       </p>
-      <div className="faq-list">
+      <div className="faq-client-list">
         {data.slice(11).map((item, index) => (
           <div
             key={index}
-            className={`faq-item ${openIndex === index ? "open" : ""}`}
+            className={`faq-client-item ${openIndex === index ? "open" : ""}`}
             onClick={() => toggleFAQ(index)}
           >
-            <div className="faq-question">
+            <div className="faq-client-question">
               {item.question}
               {openIndex === index ? <FaChevronDown /> : <FaChevronRight />}
             </div>
             <div
-              className="faq-answer-container"
+              className="faq-client-answer-container"
               ref={(el) => (contentRefs.current[index] = el)}
             >
-              <div className="faq-answer">{item.answer}</div>
+              <div className="faq-client-answer">{item.answer}</div>
             </div>
           </div>
         ))}

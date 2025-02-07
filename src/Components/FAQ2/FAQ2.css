@@ -1,27 +1,27 @@
-.faq-container {
+.faq-client-container {
     max-width: 600px;
     margin: 40px auto;
     text-align: center;
   }
   
-  .faq-title {
+  .faq-client-title {
     margin: 2rem 0;
     font-size: 96px;
     color: var(--gray-color-2);
   }
   
-  .faq-subtitle {
+  .faq-client-subtitle {
     color: #777;
     margin-bottom: 20px;
   }
   
-  .faq-list {
+  .faq-client-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
   
-  .faq-item {
+  .faq-client-item {
     background: var(--gray-color-3);
     border: 1px solid var(--gray-color-5);
     padding: 15px;
@@ -29,11 +29,11 @@
     transition: all 0.3s ease;
   }
   
-  .faq-item:hover {
+  .faq-client-item:hover {
     background: var(--gray-color-5);
   }
   
-  .faq-question {
+  .faq-client-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,36 +42,36 @@
     color: var(--blue-darker) ;
   }
   
-  .faq-answer-container {
+  .faq-client-answer-container {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.4s ease-in-out;
   }
   
-  .faq-answer {
+  .faq-client-answer {
     margin-top: 10px;
     color: var(--gray-color-1);
     text-align: left;
     line-height: 20px;
     padding-top: 10px;
   }
-.faq-container button{
+.faq-client-container button{
     margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
-  .faq-container {
+  .faq-client-container {
     padding: 1rem;
   }
-  .faq-question {
+  .faq-client-question {
     font-size: 17px;
     font-weight: 450;
   }
-  .faq-answer {
+  .faq-client-answer {
     font-size: 14px;
     line-height: 18px;
   }
-  .faq-title {
+  .faq-client-title {
     font-size: 70px;
   }
 }

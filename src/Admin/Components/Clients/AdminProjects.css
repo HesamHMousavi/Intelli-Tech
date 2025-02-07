@@ -1,0 +1,197 @@
+.split{
+  display: flex;
+  width: 100%;
+}
+.admin-container {
+  padding: 20px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* Button styling */
+.add-project-btn {
+  background: #5c67f2;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Project Card */
+.project-card {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background: #fff;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Editable input fields */
+.project-card input,
+.project-card textarea {
+  width: 50%;
+  display: block;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Features List */
+.feature-container {
+  /* display: flex; */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.feature-input-con{
+  display: flex;
+  align-items: center !important;
+  margin-top: 10px;
+}
+.feature-input-con input{
+  margin: 0;
+}
+.feature-input-con button{
+  margin-left: 1rem ;
+  padding: 10px;
+  min-width: 100px !important;
+  cursor: pointer;
+}
+
+.feature-badge {
+  background: #eee;
+  padding: 6px 12px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-top: 7px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+.delete-trash{
+  color: var(--red-color-1);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Images */
+.project-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.textarea-modal{
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 150px;
+  min-height: 150px;
+}
+.project-images img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+.feature-con-modal{
+  margin: 1rem 0;
+}
+
+/* Image upload button */
+.upload-placeholder {
+  width: 80px;
+  height: 80px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Edit and Delete Icons */
+.project-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.project-actions img {
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.project-actions img:hover {
+  opacity: 1;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 90%;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal .save-btn {
+  background: #5c67f2;
+  color: white;
+  border-radius: 5px;
+}
+
+.modal .cancel-btn {
+  background: #ddd;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+/* Error Messages */
+.error {
+  color: red;
+  font-size: 12px;
+}

@@ -16,7 +16,7 @@ const ImgSlider = ({ imgs }) => {
 
   return (
     <Slider {...settings}>
-      {imgs.map((img, index) => (
+      {imgs?.map((img, index) => (
         <div key={index}>
           <img src={img} key={index} alt={`Slide ${index}`} />
         </div>

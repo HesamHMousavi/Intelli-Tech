@@ -11,10 +11,12 @@ import { BiPaint } from "react-icons/bi";
 import { GoTools } from "react-icons/go";
 import { GrTest } from "react-icons/gr";
 import { PiRocketLaunch } from "react-icons/pi";
+import { useNavigate } from "react-router-dom";
 import FAQ2 from "../../FAQ2/FAQ2";
 import "./Process.css";
 
 const Process = () => {
+  const nav = useNavigate();
   const data = [
     {
       Step: "Choose package",
@@ -72,6 +74,7 @@ const Process = () => {
       </p>
       {data.map((item, idx) => (
         <HeroR
+          key={idx}
           Icon={item.Icon}
           Title={item.Title}
           Description={item.Description}
@@ -81,7 +84,7 @@ const Process = () => {
       <Banner2
         height="200px"
         title="Ready to get Started? Choose a package suitable for your business"
-        btn={{ name: "Get Started!" }}
+        btn={{ name: "Get Started!", onClick: () => nav("/packages") }}
       />
       <FAQ2 />
       <Footer />

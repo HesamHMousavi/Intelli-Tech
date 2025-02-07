@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { ContentContext } from "../../Context/Content/ContentState";
 import IT1 from "../../Images/IT1.png";
 import Link from "../util/Link/Link";
 import Menu from "./Menu";
 import Nav from "../nav/Nav";
 import "../util/core.css";
 import "./Header.css";
+import { CiShoppingBasket } from "react-icons/ci";
 
 const Header = () => {
   const [isShow, setShow] = useState(false);
   const nav = useNavigate();
+  const path = useLocation();
+  const { Basket } = useContext(ContentContext);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -36,6 +40,7 @@ const Header = () => {
             onClick={() => nav("/")}
           />
         </div>
+        <h3 className="child title-2">Lit Webs</h3>
         <div className="right">
           <ul>
             <li>
@@ -52,6 +57,19 @@ const Header = () => {
             </li>
             <li>
               <Link name="Contact us" link="contact" />
+            </li>
+            <li>
+              {Basket?.length > 0 && (
+                <p className="counter-tag">{Basket.length}</p>
+              )}
+              <CiShoppingBasket
+                size={50}
+                color="#3B5670"
+                className={`icon-header ${
+                  path.pathname.slice(1) === "checkout" ? "hovered" : ""
+                }`}
+                onClick={() => nav("/checkout")}
+              />
             </li>
           </ul>
           <Menu setShow={setShow} isShow={isShow} />

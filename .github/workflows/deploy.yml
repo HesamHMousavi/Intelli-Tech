@@ -19,7 +19,7 @@ jobs:
       - name: Set Environment Variables
         run: echo "REACT_APP_FORM_ID=${{ secrets.REACT_APP_FORM_ID }}" >> .env
 
-      - name: Build Project
+    - name: Build Project
         run: npm run build # Adjust if using another framework
 
       - name: Deploy to GitHub Pages

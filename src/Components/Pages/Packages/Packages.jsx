@@ -14,8 +14,8 @@ import "./Packages.css";
 const Packages = () => {
   const { Projects } = useContext(ContentContext);
   const newProjects = Projects.map((item) => ({
-    ...item, // Spread the existing properties
-    SubTitle: "", // Update the SubTitle property
+    ...item,
+    SubTitle: "",
   }));
   //Scroll to top
   useEffect(() => {

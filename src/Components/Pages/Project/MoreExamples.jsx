@@ -12,8 +12,8 @@ const MoreExamples = () => {
   return (
     <div className="max-wid">
       <div className="more-examples">
-        {Projects.map((item) => (
-          <div className="item" onClick={() => onClick(item)}>
+        {Projects.map((item, idx) => (
+          <div key={idx} className="item" onClick={() => onClick(item)}>
             <div class="image-container">
               <img src={item.Imgs[0]} alt="" />
             </div>
