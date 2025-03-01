@@ -2,7 +2,8 @@ import { createContext, useReducer, useEffect } from "react";
 import AdminReducer from "./AdminReducer";
 import { SET_FEATURES, SET_PROJECTS } from "../../Types";
 import axios from "axios";
-axios.defaults.baseURL = process.env.REACT_APP_URI;
+// https://api.litwebs.co.uk/
+axios.defaults.baseURL = "https://api.litwebs.co.uk/";
 
 export const AdminContext = createContext();
 
