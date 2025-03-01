@@ -3,7 +3,7 @@ import AdminReducer from "./AdminReducer";
 import { SET_FEATURES, SET_PROJECTS } from "../../Types";
 import axios from "axios";
 // https://api.litwebs.co.uk/
-axios.defaults.baseURL = "https://api.litwebs.co.uk/";
+axios.defaults.baseURL = "https://api.litwebs.co.uk";
 
 export const AdminContext = createContext();
 
@@ -25,7 +25,7 @@ export const AdminState = (props) => {
     try {
       await axios.get("/service/all");
     } catch (error) {
-      console.log(error.messages);
+      console.log(error);
     }
   };
 
