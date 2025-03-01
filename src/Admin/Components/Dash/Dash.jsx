@@ -1,17 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../..//Images/IT1.png";
 import MenuIcon from "../MenuIcon/MenuIcon";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  MdLogout,
-  MdSpaceDashboard,
-  MdEmail,
-  MdRateReview,
-} from "react-icons/md";
-import { BsFillQuestionSquareFill } from "react-icons/bs";
-import { GrTransaction } from "react-icons/gr";
-import { IoPersonSharp } from "react-icons/io5";
-import { AiFillProduct } from "react-icons/ai";
+import { AdminContext } from "../../Context/AdminContext/AdminState";
+import { MdLogout, MdSpaceDashboard } from "react-icons/md";
+import { ImFilesEmpty } from "react-icons/im";
 import { FcSettings } from "react-icons/fc";
 import { FaUsersCog } from "react-icons/fa";
 
@@ -20,6 +13,7 @@ import "../core/core.css";
 import "./Dash.css";
 
 const Dash = () => {
+  const { AdminLogout } = useContext(AdminContext);
   const path = useLocation();
   const nav = useNavigate();
   return (
@@ -50,52 +44,14 @@ const Dash = () => {
             </div>
           </div>
           <div
-            onClick={() => nav("/admin/transactions")}
+            onClick={() => nav("/admin/projects")}
             className={`option ${
-              path.pathname === "/admin/transactions" ? "selected" : ""
+              path.pathname === "/admin/projects" ? "selected" : ""
             }`}
           >
-            <GrTransaction size={20} />
-            <h4>Transactions</h4>
-            <div className="item-tag-green">
-              <p>1</p>
-            </div>
+            <ImFilesEmpty size={20} />
+            <h4>Projects</h4>
           </div>
-          <div
-            onClick={() => nav("/admin/customers")}
-            className={`option ${
-              path.pathname === "/admin/customers" ? "selected" : ""
-            }`}
-          >
-            <IoPersonSharp size={20} />
-            <h4>Customers</h4>
-          </div>
-          {/* <div
-            onClick={() => nav("/admin/services")}
-            className={`option ${
-              path.pathname === "/admin/services" ? "selected" : ""
-            }`}
-          >
-            <AiFillProduct size={20} />
-            <h4>Services</h4>
-          </div>
-          <div className="option">
-            <MdEmail size={20} />
-            <h4>Emailer</h4>
-          </div>
-          <div
-            onClick={() => nav("/admin/faqs")}
-            className={`option ${
-              path.pathname === "/admin/faqs" ? "selected" : ""
-            }`}
-          >
-            <BsFillQuestionSquareFill size={20} />
-            <h4>FAQs</h4>
-          </div>
-          <div className="option">
-            <MdRateReview size={20} />
-            <h4>Reviews</h4>
-          </div> */}
         </div>
 
         <h4 className="sub-title-text mgt-3">Account</h4>
@@ -104,7 +60,12 @@ const Dash = () => {
             <FcSettings size={20} />
             <h4>Settings</h4>
           </div>
-          <div className="option">
+          <div
+            onClick={() => nav("/admin/admins")}
+            className={`option ${
+              path.pathname === "/admin/admins" ? "selected" : ""
+            }`}
+          >
             <FaUsersCog size={20} />
             <h4>Manage Users</h4>
           </div>
@@ -113,7 +74,7 @@ const Dash = () => {
 
       <footer>
         <div className="options">
-          <div className="option">
+          <div className="option" onClick={AdminLogout}>
             <MdLogout size={20} color="#d32f2f" />
             <h4>Dashboard</h4>
           </div>

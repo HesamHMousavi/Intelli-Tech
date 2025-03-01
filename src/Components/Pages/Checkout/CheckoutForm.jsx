@@ -43,7 +43,7 @@ const Form = () => {
       type: "default",
     });
 
-    return;
+    // return;
 
     if (!isFormValid()) {
       CreateAlert({
@@ -56,7 +56,7 @@ const Form = () => {
     }
 
     try {
-      const { data } = await axios.post("http://localhost:5001/payment", {
+      const { data } = await axios.post("http://192.168.1.110:5001/payment", {
         items: Basket,
         customerDetails: formData, // Include form data in request
       });

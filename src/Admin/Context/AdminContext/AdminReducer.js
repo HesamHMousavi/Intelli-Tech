@@ -1,4 +1,4 @@
-import { SET_FEATURES } from "../../Types";
+import { SET_FEATURES , SET_PROJECTS } from "../../Types";
 const AdminReducer = (state, action) => {
   switch (action.type) {
     default:
@@ -8,6 +8,12 @@ const AdminReducer = (state, action) => {
       return {
         ...state,
         FeaturesArray: action.payload,
+      };
+    }
+    case SET_PROJECTS: {
+      return {
+        ...state,
+        Projects: action.payload,
       };
     }
   }

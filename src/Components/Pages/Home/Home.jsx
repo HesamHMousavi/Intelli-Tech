@@ -36,7 +36,7 @@ const Home = () => {
       <HeroLeft
         btn1={btn1}
         btn2={btn2}
-        t={"Empower Your Business with Websites starting from only £299"}
+        t={"Empower Your Business with Websites starting from only £399"}
         subt={
           "We help you stand out online by creating professional, user-friendly websites that captivate visitors and drive results."
         }

@@ -5,7 +5,7 @@ import "./Search.css";
 const Search = () => {
   return (
     <div>
-      <div className="search-container">
+      <div className="search-container-data">
         <BsSearch className="search-icon" />
         <input type="text" className="search-input" placeholder="Search" />
       </div>

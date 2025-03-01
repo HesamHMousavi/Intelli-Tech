@@ -1,360 +1,253 @@
-import React, { useState } from "react";
-import "./AdminProjects.css";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  useCallback,
+} from "react";
 import Dash from "../Dash/Dash";
-import { BiTrash } from "react-icons/bi";
+import Modal from "./Modal";
+import ProjectsEdit from "./ProjectsEdit";
+import ProjectList from "./ProjectList";
+import { FiEdit } from "react-icons/fi";
+import { FaTrashCan } from "react-icons/fa6";
+import { AdminContext } from "../../Context/AdminContext/AdminState";
+import "./AdminProjects.css";
 
 const AdminProjects = () => {
-  const [projects, setProjects] = useState([
-    {
-      id: 1,
-      title: "E-commerce Website Redesign",
-      client: "Tech Solutions Inc.",
-      price: 12000,
-      date: "2025-03-15",
-      description:
-        "Complete redesign of the e-commerce platform with modern UI/UX principles. ",
-      features: ["Responsive Design", "Payment Gateway", "Admin Dashboard"],
-      images: [
-        "https://via.placeholder.com/100",
-        "https://via.placeholder.com/100",
-      ],
-      newFeature: "",
-      isEditing: false,
-    },
-  ]);
-
+  const { Projects, GetProjects, AddProject, EditProject, DeleteProject } =
+    useContext(AdminContext);
+  const [projects, setProjects] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [editingProjectId, setEditingProjectId] = useState(null);
+  const fileInputRef = useRef(null);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [newProject, setNewProject] = useState({
-    title: "",
-    client: "",
-    price: "",
-    date: "",
-    description: "",
-    features: "",
-    images: [],
+    ProjectName: "",
+    Price: "",
+    Client: "",
+    StartDate: "",
+    EndDate: "",
+    Description: "",
+    Features: [],
+    newFeature: "",
+    Images: [],
+    URI: "",
+    Completed: false,
   });
 
-  const [errors, setErrors] = useState({});
+  useEffect(() => {
+    setProjects((prevProjects) =>
+      Projects.map((project) => {
+        const existingProject = prevProjects.find((p) => p._id === project._id);
+        return {
+          ...project,
+          Features: project.Features || [],
+          newFeature: "",
+          Images: existingProject
+            ? existingProject.Images
+            : project.Images || [], // Preserve Images
+        };
+      })
+    );
+  }, [Projects]);
+
+  const FetchData = useCallback(async () => {
+    await GetProjects();
+  }, [GetProjects]);
+
+  useEffect(() => {
+    FetchData();
+  }, [FetchData]);
 
   const toggleEdit = (id) => {
-    setProjects(
-      projects.map((project) =>
-        project.id === id
-          ? { ...project, isEditing: !project.isEditing }
-          : project
-      )
-    );
+    setEditingProjectId(editingProjectId === id ? null : id);
   };
 
   const handleEdit = (id, field, value) => {
-    setProjects(
-      projects.map((project) =>
-        project.id === id ? { ...project, [field]: value } : project
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project._id === id ? { ...project, [field]: value } : project
       )
     );
   };
 
-  const handleDelete = (id) => {
-    setProjects(projects.filter((project) => project.id !== id));
+  const handleDelete = async (id) => {
+    setProjects(projects.filter((project) => project._id !== id));
+    if (editingProjectId === id) {
+      setEditingProjectId(null);
+    }
+    await DeleteProject(id);
   };
 
-  const addFeature = (id) => {
-    setProjects(
-      projects.map((project) => {
-        if (project.id === id && project.newFeature.trim()) {
-          return {
-            ...project,
-            features: [...project.features, project.newFeature.trim()],
-            newFeature: "",
-          };
-        }
-        return project;
-      })
-    );
-  };
+  // const addFeature = (id) => {
+  //   setProjects(
+  //     projects.map((project) => {
+  //       if (project._id === id && project.newFeature?.trim()) {
+  //         return {
+  //           ...project,
+  //           Features: [...(project.Features || []), project.newFeature.trim()],
+  //           newFeature: "",
+  //         };
+  //       }
+  //       return project;
+  //     })
+  //   );
+  // };
 
   const addImage = (id) => {
-    const newImageURL = prompt("Enter Image URL:");
-    if (!newImageURL) return;
-    setProjects(
-      projects.map((project) =>
-        project.id === id
-          ? { ...project, images: [...project.images, newImageURL] }
+    setSelectedProjectId(id);
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file && selectedProjectId !== null) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProjects((prevProjects) =>
+          prevProjects.map((project) =>
+            project._id === selectedProjectId
+              ? {
+                  ...project,
+                  Images: [...(project.Images || []), reader.result],
+                }
+              : project
+          )
+        );
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const deleteImage = (projectId, imageIndex) => {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project._id === projectId
+          ? {
+              ...project,
+              Images: project.Images.filter((_, idx) => idx !== imageIndex),
+            }
           : project
       )
     );
   };
 
-  const validate = () => {
-    let newErrors = {};
-    if (!newProject.title.trim()) newErrors.title = "Title is required";
-    if (!newProject.client.trim()) newErrors.client = "Client is required";
-    if (!newProject.price || isNaN(newProject.price))
-      newErrors.price = "Valid price is required";
-    if (!newProject.date) newErrors.date = "Date is required";
-    if (!newProject.description.trim())
-      newErrors.description = "Description is required";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const handleSaveOnEdit = async (updatedProject) => {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project._id === updatedProject._id ? updatedProject : project
+      )
+    );
+    delete updatedProject.newFeature;
+    await EditProject(updatedProject);
+    toggleEdit(updatedProject._id);
   };
 
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.ProjectName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.Client?.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const handleAddProject = () => {
-    if (!validate()) return;
-
-    const newProjectData = {
-      ...newProject,
-      id: projects.length + 1,
-      price: Number(newProject.price),
-      features: newProject.features.split(",").map((f) => f.trim()),
-      images: [],
-      isEditing: false,
-    };
-
-    setProjects([...projects, newProjectData]);
+    if (!newProject.ProjectName.trim()) return;
+    setProjects([...projects, { ...newProject, _id: Date.now().toString() }]);
     setNewProject({
-      title: "",
-      client: "",
-      price: "",
-      date: "",
-      description: "",
-      features: "",
-      images: [],
+      ProjectName: "",
+      Client: "",
+      Price: "",
+      StartDate: "",
+      EndDate: "",
+      Description: "",
+      Features: [],
+      newFeature: "",
+      Images: [],
+      Completed: false,
+      URI: "",
     });
+    delete newProject.newFeature;
     setModalOpen(false);
+    AddProject(newProject);
   };
 
   return (
     <div className="split">
       <Dash />
       <div className="admin-container">
-        <h2>Projects</h2>
-        <button className="add-project-btn" onClick={() => setModalOpen(true)}>
-          + Add New Project
-        </button>
-
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
-            <div className="project-actions">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png"
-                alt="Edit"
-                onClick={() => toggleEdit(project.id)}
-              />
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
-                alt="Delete"
-                onClick={() => handleDelete(project.id)}
-              />
-            </div>
-
-            {project.isEditing ? (
-              <>
-                <input
-                  type="text"
-                  value={project.title}
-                  onChange={(e) =>
-                    handleEdit(project.id, "title", e.target.value)
-                  }
-                />
-                <input
-                  type="text"
-                  value={project.client}
-                  onChange={(e) =>
-                    handleEdit(project.id, "client", e.target.value)
-                  }
-                />
-                <input
-                  type="number"
-                  value={project.price}
-                  onChange={(e) =>
-                    handleEdit(project.id, "price", e.target.value)
-                  }
-                />
-                <input
-                  type="date"
-                  value={project.date}
-                  onChange={(e) =>
-                    handleEdit(project.id, "date", e.target.value)
-                  }
-                />
-                <textarea
-                  value={project.description}
-                  onChange={(e) =>
-                    handleEdit(project.id, "description", e.target.value)
-                  }
-                />
-
-                <h4>Features:</h4>
-                <div className="feature-container">
-                  {project.features.map((feature, index) => (
-                    <>
-                      <span key={index} className="feature-badge">
-                        <BiTrash size={18} className="delete-trash" />
-                        {feature}
-                      </span>
-                    </>
-                  ))}
-                  <div className="feature-input-con">
-                    <input
-                      className="feature-input"
-                      type="text"
-                      value={project.newFeature}
-                      onChange={(e) =>
-                        handleEdit(project.id, "newFeature", e.target.value)
-                      }
-                    />
-                    <button
-                      onClick={() => addFeature(project.id)}
-                      className="add-project-btn"
-                    >
-                      Add
-                    </button>
-                  </div>
-                </div>
-
-                <h4>Images:</h4>
-                <div className="project-images">
-                  {project.images.map((image, index) => (
-                    <img key={index} src={image} alt="Project" />
-                  ))}
-                  <div
-                    className="upload-placeholder"
-                    onClick={() => addImage(project.id)}
-                  >
-                    +
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <h3>{project.title}</h3>
-                <p>
-                  <strong>Client:</strong> {project.client}
-                </p>
-                <p>
-                  <strong>Price:</strong> ${project.price.toLocaleString()}
-                </p>
-                <p>
-                  <strong>Date:</strong> {new Date(project.date).toDateString()}
-                </p>
-                <p>
-                  <strong>
-                    Description:
-                    <br />
-                  </strong>{" "}
-                  {project.description}
-                </p>
-
-                <h4>Features:</h4>
-                <div className="feature-container">
-                  {project.features.map((feature, index) => (
-                    <span key={index} className="feature-badge">
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                <h4>Images:</h4>
-                <div className="project-images">
-                  {project.images.map((image, index) => (
-                    <img key={index} src={image} alt="Project" />
-                  ))}
-                </div>
-              </>
-            )}
+        <div className="header-projects">
+          <h2>Projects</h2>
+          <div className="search-con">
+            <input
+              type="text"
+              placeholder="Search Projects..."
+              className="search-input"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button
+              className="add-project-btn"
+              onClick={() => setModalOpen(true)}
+            >
+              + Add New Project
+            </button>
           </div>
-        ))}
+        </div>
+
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project) => (
+            <div key={project._id} className="project-card">
+              <div className="project-actions">
+                <FiEdit
+                  size={21}
+                  color="#aaa"
+                  onClick={() => toggleEdit(project._id)}
+                />
+                <FaTrashCan
+                  size={20}
+                  color="#aaa"
+                  onClick={() => handleDelete(project._id)}
+                />
+              </div>
+
+              {editingProjectId === project._id ? (
+                <ProjectsEdit
+                  project={project}
+                  handleEdit={handleEdit}
+                  addImage={addImage}
+                  deleteImage={deleteImage}
+                  toggleEdit={toggleEdit}
+                  handleSaveOnEdit={handleSaveOnEdit}
+                />
+              ) : (
+                <ProjectList project={project} />
+              )}
+            </div>
+          ))
+        ) : (
+          <div className="center-no-found">
+            <h2>No projects found.</h2>
+          </div>
+        )}
+
+        <input
+          type="file"
+          ref={fileInputRef}
+          style={{ display: "none" }}
+          accept="image/*"
+          onChange={handleFileChange}
+        />
 
         {modalOpen && (
-          <div className="modal-overlay">
-            <div className="modal">
-              <h3>Add New Project</h3>
-              <input
-                type="text"
-                placeholder="Title"
-                value={newProject.title}
-                onChange={(e) =>
-                  setNewProject({ ...newProject, title: e.target.value })
-                }
-              />
-              <input
-                type="text"
-                placeholder="Project Name"
-                value={newProject.title}
-                onChange={(e) =>
-                  setNewProject({ ...newProject, title: e.target.value })
-                }
-              />
-              <input
-                type="text"
-                placeholder="Client Name"
-                value={newProject.title}
-                onChange={(e) =>
-                  setNewProject({ ...newProject, title: e.target.value })
-                }
-              />
-              <input
-                type="number"
-                placeholder="Price"
-                value={newProject.title}
-                onChange={(e) =>
-                  setNewProject({ ...newProject, title: e.target.value })
-                }
-              />
-              <input
-                type="date"
-                placeholder="date"
-                value={newProject.title}
-                onChange={(e) =>
-                  setNewProject({ ...newProject, title: e.target.value })
-                }
-              />
-              <textarea
-                placeholder="Project Description"
-                className="textarea-modal"
-              />
-              <div className="feature-con-modal">
-                <span className="feature-badge">
-                  <BiTrash size={18} className="delete-trash" />
-                  feature
-                </span>
-                <span className="feature-badge">
-                  <BiTrash size={18} className="delete-trash" />
-                  feature
-                </span>
-                <span className="feature-badge">
-                  <BiTrash size={18} className="delete-trash" />
-                  feat
-                </span>
-                <span className="feature-badge">
-                  <BiTrash size={18} className="delete-trash" />
-                  featurewddw
-                </span>
-                <span className="feature-badge">
-                  <BiTrash size={18} className="delete-trash" />
-                  featurewswsw
-                </span>
-                <div className="feature-input-con">
-                  <input
-                    className="feature-input"
-                    placeholder="Feature"
-                    type="text"
-                  />
-                  <button className="add-project-btn">Add</button>
-                </div>
-              </div>
-              <button className="save-btn" onClick={handleAddProject}>
-                Add
-              </button>
-              <button
-                className="cancel-btn"
-                onClick={() => setModalOpen(false)}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
+          <Modal
+            setNewProject={setNewProject}
+            newProject={newProject}
+            setModalOpen={setModalOpen}
+            handleAddProject={handleAddProject}
+          />
         )}
       </div>
     </div>

@@ -13,6 +13,9 @@ import AlertList from "./Components/util/Alert/AlertList";
 import Data from "./Admin/Components/Data/Data";
 import Services from "./Admin/Components/Services/Services";
 import AdminProjects from "./Admin/Components/Clients/AdminProjects";
+import Login from "./Admin/Components/Auth/Login";
+import PrivateRoute from "./PrivateRoute";
+import ManageUsers from "./Admin/Components/ManageUsers/ManageUsers";
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
       <>
         <AlertList />
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/process" element={<Process />} />
           <Route path="/example" element={<Example />} />
@@ -29,9 +33,15 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<Success />} />
-          <Route path="/admin/data" element={<Data />} />
-          <Route path="/admin/services" element={<Services />} />
-          <Route path="/admin/projects" element={<AdminProjects />} />
+          <Route path="/admin/login" element={<Login />} />
+
+          {/* Protected Admin Routes */}
+          <Route path="/admin/*" element={<PrivateRoute />}>
+            <Route path="data" element={<Data />} />
+            <Route path="services" element={<Services />} />
+            <Route path="projects" element={<AdminProjects />} />
+            <Route path="admins" element={<ManageUsers />} />
+          </Route>
         </Routes>
       </>
     </Router>

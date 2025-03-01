@@ -1,0 +1,88 @@
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.customer-table th {
+  background: #f5f5f5;
+  font-weight: bold;
+  color: #333;
+}
+
+.customer-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* Input fields in edit mode */
+.edit-input {
+  width: fit-content !important;
+  text-align: start !important;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Select dropdowns */
+.select-input {
+  width: 40% !important;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Actions column */
+.icons {
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: opacity 0.2s;
+}
+
+.save-icon {
+  color: #70acdd;
+}
+
+.cancel-icon {
+  color: #d9534f;
+}
+
+.delete-icon {
+  color: #d9534f;
+}
+
+.icons:hover {
+  opacity: 0.7;
+}

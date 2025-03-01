@@ -125,12 +125,12 @@ export const ContextState = (props) => {
         id: 1,
         Name: "Basic",
         Sub: "Ideal for small business or start ups. contains basic functionality and limited features",
-        Price: 299,
+        Price: 399,
         Features: [
           { Name: "Up to 5 Pages", isTicked: true },
           { Name: "5 design revisions", isTicked: true },
-          { Name: "12 Months Free Domain", isTicked: true },
-          { Name: "12 Months Free Hosting", isTicked: true },
+          { Name: "One time domain fee", isTicked: true },
+          { Name: "Hosting for simple charges", isTicked: true },
           { Name: "Mobile friendly design", isTicked: true },
           { Name: "Social Media links", isTicked: true },
           { Name: "Contact form", isTicked: true },
@@ -148,19 +148,20 @@ export const ContextState = (props) => {
         id: 2,
         Name: "Standard",
         Sub: "Designed for growing businesses, offering expanded features and additional tools to help you scale efficiently.",
-        Price: 599,
+        Price: 799,
         Features: [
           { Name: "Up to 7 Pages", isTicked: true },
           { Name: "3 design revisions per page", isTicked: true },
-          { Name: "12 Months Free Domain", isTicked: true },
-          { Name: "12 Months Free Hosting", isTicked: true },
+          { Name: "One time domain fee", isTicked: true },
+          { Name: "Hosting for simple charges", isTicked: true },
           { Name: "Mobile friendly design", isTicked: true },
           { Name: "Social Media links", isTicked: true },
           { Name: "Contact form", isTicked: true },
+          { Name: "Whats app contact", isTicked: true },
           { Name: "Customer Reviews", isTicked: true },
           { Name: "Google Maps", isTicked: true },
           { Name: "Server/Database", isTicked: true },
-          { Name: "Authentication System", isTicked: true },
+          { Name: "Login System", isTicked: true },
           { Name: "Custom design", isTicked: false },
           { Name: "Payment System", isTicked: false },
           { Name: "Source Code", isTicked: false },
@@ -171,21 +172,22 @@ export const ContextState = (props) => {
         id: 3,
         Name: "Professional",
         Sub: "Equipped with advanced features and premium support, ideal for enterprises maximising efficiency.",
-        Price: 1499,
+        Price: 1749,
         Features: [
           { Name: "Up to 12 Pages", isTicked: true },
           { Name: "5 design revisions per page", isTicked: true },
-          { Name: "12 Months Free Domain", isTicked: true },
-          { Name: "12 Months Free Hosting", isTicked: true },
+          { Name: "One time domain fee", isTicked: true },
+          { Name: "Hosting for simple charges", isTicked: true },
           { Name: "Mobile friendly design", isTicked: true },
           { Name: "Social Media links", isTicked: true },
           { Name: "Contact form", isTicked: true },
           { Name: "Customer Reviews", isTicked: true },
+          { Name: "Whats app contact", isTicked: true },
           { Name: "Google Maps", isTicked: true },
           { Name: "Server/Database", isTicked: true },
-          { Name: "Authentication System", isTicked: true },
+          { Name: "Login System", isTicked: true },
           { Name: "Custom design", isTicked: true },
-          { Name: "Payment System", isTicked: true },
+          { Name: "Payment System - Apple/Google pay", isTicked: true },
           { Name: "Source Code", isTicked: true },
         ],
       },
@@ -195,12 +197,12 @@ export const ContextState = (props) => {
     Content: {},
     Total: 0,
   };
-  const savedState = localStorage.getItem("state");
-  const initial = savedState ? JSON.parse(savedState) : initialState;
-  const [state, dispatch] = useReducer(ContentReducer, initial);
+  // const savedState = localStorage.getItem("state");
+  // const initial = savedState ? JSON.parse(savedState) : initialState;
+  const [state, dispatch] = useReducer(ContentReducer, initialState);
 
   useEffect(() => {
-    localStorage.setItem("state", JSON.stringify(state));
+    // localStorage.setItem("state", JSON.stringify(state));
     alertRef.current = state.Alerts;
   }, [state]);
 

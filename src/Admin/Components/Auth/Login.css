@@ -1,0 +1,17 @@
+.login{
+    display: flex;    
+    align-items: center;
+}
+.from-con{
+    width:50%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login img{
+    padding: 1rem;
+    width: 55%;
+    max-height: 100vh;
+    object-fit: cover;
+}
