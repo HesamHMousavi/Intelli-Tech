@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ContentContext } from "../../Context/Content/ContentState";
-import IT1 from "../../Images/IT1.png";
+import IT1 from "../../Images/logo.png";
 import Link from "../util/Link/Link";
 import Menu from "./Menu";
 import Nav from "../nav/Nav";
@@ -33,12 +33,12 @@ const Header = () => {
     <div className="header-con">
       <div className="header max-wid ">
         <div className="left">
-          <img
+          {/* <img
             src={IT1}
             alt=""
             className="soft-shadow"
             onClick={() => nav("/")}
-          />
+          /> */}
         </div>
         <h3 className="child title-2">Lit Webs</h3>
         <div className="right">

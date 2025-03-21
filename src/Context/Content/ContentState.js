@@ -23,12 +23,192 @@ import Exam4Img5 from "../../Images/Project4/img5.png";
 import Exam4Img6 from "../../Images/Project4/img6.png";
 import Exam4Img7 from "../../Images/Project4/img7.png";
 
+import Exam5Img1 from "../../Images/Project5/logo.jpeg";
+import Exam5Img2 from "../../Images/Project5/IMG1.png";
+import Exam5Img3 from "../../Images/Project5/IMG2.png";
+import Exam5Img4 from "../../Images/Project5/IMG3.png";
+import Exam5Img5 from "../../Images/Project5/IMG4.png";
+import Exam5Img6 from "../../Images/Project5/IMG5.png";
+import Exam5Img7 from "../../Images/Project5/IMG6.png";
+import Exam5Img8 from "../../Images/Project5/IMG7.png";
+
+import Exam6Img1 from "../../Images/Project6/logo.jpeg";
+import Exam6Img2 from "../../Images/Project6/IMG1.png";
+import Exam6Img3 from "../../Images/Project6/IMG2.png";
+import Exam6Img4 from "../../Images/Project6/IMG3.png";
+import Exam6Img5 from "../../Images/Project6/IMG4.png";
+import Exam6Img6 from "../../Images/Project6/IMG5.png";
+import Exam6Img7 from "../../Images/Project6/IMG6.png";
+import Exam6Img8 from "../../Images/Project6/IMG7.png";
+
+import Exam7Img1 from "../../Images/Project7/logo.jpeg";
+import Exam7Img2 from "../../Images/Project7/IMG1.png";
+import Exam7Img3 from "../../Images/Project7/IMG2.png";
+import Exam7Img4 from "../../Images/Project7/IMG3.png";
+import Exam7Img5 from "../../Images/Project7/IMG4.png";
+import Exam7Img6 from "../../Images/Project7/IMG5.png";
+import Exam7Img7 from "../../Images/Project7/IMG6.png";
+import Exam7Img8 from "../../Images/Project7/IMG7.png";
+
+import Exam8Img1 from "../../Images/Project8/logo.jpeg";
+import Exam8Img2 from "../../Images/Project8/IMG1.png";
+import Exam8Img3 from "../../Images/Project8/IMG2.png";
+import Exam8Img4 from "../../Images/Project8/IMG3.png";
+import Exam8Img5 from "../../Images/Project8/IMG4.png";
+import Exam8Img6 from "../../Images/Project8/IMG5.png";
+import Exam8Img7 from "../../Images/Project8/IMG6.png";
+import Exam8Img8 from "../../Images/Project8/IMG7.png";
+
+import Exam9Img1 from "../../Images/Project9/logo.jpeg";
+import Exam9Img2 from "../../Images/Project9/IMG1.png";
+import Exam9Img3 from "../../Images/Project9/IMG2.png";
+import Exam9Img4 from "../../Images/Project9/IMG3.png";
+import Exam9Img5 from "../../Images/Project9/IMG4.png";
+import Exam9Img6 from "../../Images/Project9/IMG5.png";
+import Exam9Img7 from "../../Images/Project9/IMG6.png";
+import Exam9Img8 from "../../Images/Project9/IMG7.png";
+
 export const ContentContext = createContext();
 
 export const ContextState = (props) => {
   const alertRef = useRef("");
   const initialState = {
     Projects: [
+      {
+        Title: "PLS",
+        Client: "PLS",
+        Description: [
+          "Paramount Logistics specialises in reliable and efficient truck transportation, delivering goods safely across the country.",
+          "With a modern fleet and experienced drivers, we ensure every shipment arrives on time and in perfect condition.",
+          "From small deliveries to large-scale logistics, Paramount Logistics is built to keep businesses moving forward.",
+        ],
+
+        Features: [
+          "Mobile friendly design",
+          "More than 5 Distinct Pages",
+          "12 Months Hosting",
+          "Contact form",
+          "Custom design",
+        ],
+        Imgs: [
+          Exam9Img1,
+          Exam9Img2,
+          Exam9Img3,
+          Exam9Img4,
+          Exam9Img5,
+          Exam9Img6,
+          Exam9Img7,
+          Exam9Img8,
+        ],
+      },
+      {
+        Title: "T333scustoms",
+        Client: "T333scustoms",
+        Description: [
+          "T333Customs creates bespoke number plates that add a unique touch to any vehicle, combining style with personal flair",
+          "Every plate is designed with precision, using high-quality materials to ensure durability and a flawless finish.",
+          "Whether you’re after a sleek, modern design or something bold and eye-catching, T333Customs brings your vision to life.",
+        ],
+
+        Features: [
+          "Mobile friendly design",
+          "More than 5 Distinct Pages",
+          "12 Months Hosting",
+          "Contact form",
+          "Custom design",
+        ],
+        Imgs: [
+          Exam8Img1,
+          Exam8Img2,
+          Exam8Img3,
+          Exam8Img4,
+          Exam8Img5,
+          Exam8Img6,
+          Exam8Img7,
+          Exam8Img8,
+        ],
+      },
+      {
+        Title: "ZHR",
+        Client: "Zhr Nails",
+        Description: [
+          "ZHR Nails offers stylish, high-quality nail designs that blend creativity with precision.",
+          "From bold statement nails to elegant minimal looks, every set is crafted with care and attention to detail.",
+          "Whether it’s for a special occasion or everyday glam, ZHR Nails helps clients express their style through beautiful nails.",
+        ],
+
+        Features: [
+          "Mobile friendly design",
+          "More than 5 Distinct Pages",
+          "12 Months Hosting",
+          "Contact form",
+          "Custom design",
+        ],
+        Imgs: [
+          Exam7Img1,
+          Exam7Img2,
+          Exam7Img3,
+          Exam7Img4,
+          Exam7Img5,
+          Exam7Img6,
+          Exam7Img7,
+          Exam7Img8,
+        ],
+      },
+      {
+        Title: "Oak Forest Furniture",
+        Client: "Oak Forest of yorkshire",
+        Description: [
+          "Oak Forest Furniture designs and handcrafts beautiful, durable pieces that bring natural warmth into every home. ",
+          "Each table, chair, and cabinet is made from carefully sourced wood, combining traditional craftsmanship with modern style.",
+          "Whether you’re furnishing a cosy corner or a full home, Oak Forest Furniture creates pieces built to last for generations.",
+        ],
+
+        Features: [
+          "Mobile friendly design",
+          "More than 5 Distinct Pages",
+          "12 Months Hosting",
+          "Contact form",
+          "Custom design",
+        ],
+        Imgs: [
+          Exam6Img1,
+          Exam6Img2,
+          Exam6Img3,
+          Exam6Img4,
+          Exam6Img5,
+          Exam6Img6,
+          Exam6Img7,
+          Exam6Img8,
+        ],
+      },
+      {
+        Title: "79 Jewellers",
+        Client: "79 Jewellers",
+        Description: [
+          "79 Jewellers creates handcrafted jewellery that blends modern design with timeless craftsmanship, offering pieces that tell a story. ",
+          "Every ring, necklace and bracelet is made with care, using high-quality materials chosen for their beauty and durability.",
+          "Whether it’s a custom engagement ring or a gift to yourself, 79 Jewellers helps turn moments into lasting treasures.",
+        ],
+
+        Features: [
+          "Mobile friendly design",
+          "More than 5 Distinct Pages",
+          "12 Months Hosting",
+          "Contact form",
+          "Custom design",
+        ],
+        Imgs: [
+          Exam5Img1,
+          Exam5Img2,
+          Exam5Img3,
+          Exam5Img4,
+          Exam5Img5,
+          Exam5Img6,
+          Exam5Img7,
+          Exam5Img8,
+        ],
+      },
       {
         Title: "Flux Fitness",
         Client: "TradeX",

@@ -18,7 +18,7 @@ const Project = () => {
   return (
     <div className="project">
       <Header />
-      <Banner height="200px" title="Project Name" />
+      <Banner height="200px" title="Examples" />
       <div className="max-wid">
         <div className="back-link">
           <TfiControlBackward size={24} />

@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { ContentContext } from "../../../Context/Content/ContentState";
 import faqs from "../../../Context/FAQS";
 import "./Home.css";
+import HomeView from "./HomeView";
 
 const Home = () => {
   const nav = useNavigate();
@@ -33,15 +34,7 @@ const Home = () => {
   return (
     <div className="home">
       <Header />
-      <HeroLeft
-        btn1={btn1}
-        btn2={btn2}
-        t={"Empower Your Business with Websites starting from only £399"}
-        subt={
-          "We help you stand out online by creating professional, user-friendly websites that captivate visitors and drive results."
-        }
-        img={img}
-      />
+      <HomeView />
       <Banner
         title="Helping UK Businesses reach their potential"
         height="200px"

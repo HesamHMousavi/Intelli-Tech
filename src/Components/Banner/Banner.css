@@ -7,8 +7,8 @@
     flex-direction: column;
     padding:  3rem;
     margin: auto;
-    background: linear-gradient(to right, #3fb0da, #6dd5ed);
-    background: linear-gradient(to right, #386ca0, #3fb0da);
+    /* background: linear-gradient(to right, #386ca0, #3fb0da); */
+    background: linear-gradient(to right, #111111, #000000);
     
 }
 .banner h1{

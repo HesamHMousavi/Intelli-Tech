@@ -23,7 +23,7 @@ export const AdminState = (props) => {
 
   const GetPackages = async () => {
     try {
-      await axios.get("/service/all");
+      await axios.get("https://api.litwebs.co.uk/service/all");
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +31,7 @@ export const AdminState = (props) => {
 
   const GetFeatures = async () => {
     try {
-      const res = await axios.get("/feature/all");
+      const res = await axios.get("https://api.litwebs.co.uk/feature/all");
       dispatch({ type: SET_FEATURES, payload: res.data.data });
     } catch (error) {
       console.log(error.messages);
@@ -49,7 +49,7 @@ export const AdminState = (props) => {
 
   const AddFeature = async (Feature) => {
     try {
-      const res = await axios.post("/feature", { Feature });
+      const res = await axios.post("https://api.litwebs.co.uk/feature", { Feature });
       return res.data;
     } catch (error) {
       console.log(error);
@@ -58,7 +58,7 @@ export const AdminState = (props) => {
 
   const DeleteFeature = async (id) => {
     try {
-      await axios.put("/feature/delete", { id });
+      await axios.put("https://api.litwebs.co.uk/feature/delete", { id });
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +67,7 @@ export const AdminState = (props) => {
   // GET PROJECTS
   const GetProjects = async () => {
     try {
-      const res = await axios.get("/project");
+      const res = await axios.get("https://api.litwebs.co.uk/project");
       dispatch({ type: SET_PROJECTS, payload: res.data.data });
     } catch (error) {
       console.log(error.messages);
@@ -77,7 +77,7 @@ export const AdminState = (props) => {
   // ADD PROJECT
   const AddProject = async (Project) => {
     try {
-      await axios.post("/project", { Project });
+      await axios.post("https://api.litwebs.co.uk/project", { Project });
     } catch (error) {
       console.log(error);
     }
@@ -86,7 +86,7 @@ export const AdminState = (props) => {
   // Edit PROJECT
   const EditProject = async (Project) => {
     try {
-      await axios.put("/project", { Project });
+      await axios.put("https://api.litwebs.co.uk/project", { Project });
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +95,7 @@ export const AdminState = (props) => {
   // Delete Project
   const DeleteProject = async (id) => {
     try {
-      await axios.delete("/project", {
+      await axios.delete("https://api.litwebs.co.uk/project", {
         headers: {
           id: id, // Send ID in headers
         },
@@ -108,7 +108,9 @@ export const AdminState = (props) => {
   // Admin Login
   const AdminLogin = async (admin) => {
     try {
-      const res = await axios.post("/admin-login", { admin });
+      const res = await axios.post("https://api.litwebs.co.uk/admin-login", {
+        admin,
+      });
       if (res.data.Token) {
         const decodedToken = JSON.parse(atob(res.data.Token.split(".")[1]));
         const expirationTime = decodedToken.exp * 1000;
