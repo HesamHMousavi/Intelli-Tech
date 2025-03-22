@@ -1,42 +1,43 @@
-.hero-r-con{
-    width: 100%;
-    margin: auto;
+.hero-r-con {
+  width: 100%;
+  margin: auto;
 }
-.hero-r{
-    width: 100%;
-    display: flex;
-    padding: 6rem 2rem;
-    justify-content: space-between;
-    align-items: center;
+.hero-r {
+  width: 100%;
+  display: flex;
+  padding: 6rem 2rem;
+  justify-content: space-between;
+  align-items: center;
 }
-.hero-r .right, .hero-r .left{
-    width: 50%;
+.hero-r .right,
+.hero-r .left {
+  width: 50%;
 }
-.hero-r .right{
-    display: flex;
-    justify-content: center;
+.hero-r .right {
+  display: flex;
+  justify-content: center;
 }
-.hero-r .h2{
-    font-weight: 300;
-    color: var(--blue-dark);
-    font-size: var(--title2);
-    margin: 0;
+.hero-r .h2 {
+  font-weight: 300;
+  color: var(--blue-dark);
+  font-size: var(--title2);
+  margin: 0;
 }
-.hero-r p{
-    font-weight: 250;
-    color: var(--gray-color-1);
-    font-size: var(--large-text);
-    line-height: 32px;
-    margin-top: 1rem;
+.hero-r p {
+  font-weight: 250;
+  color: var(--gray-color-1);
+  font-size: var(--large-text);
+  line-height: 32px;
+  margin-top: 1rem;
 }
-.alt-bg{
-    background-color: var(--gray-color-4);
+.alt-bg {
+  background-color: var(--lw-text-color-1);
 }
 
 .left {
   order: 1;
 }
-  
+
 .right {
   order: 2;
 }
@@ -48,49 +49,53 @@
 .hero-r.is-left .right {
   order: 1;
 }
-.i{
-  color: var(--blue-darker);
+.i {
+  color: var(--lw-text-color-1);
+  height: 200px;
+  width: 200px;
+}
+.i-alt {
+  color: var(--lw-text-color-7);
   height: 200px;
   width: 200px;
 }
 @media (max-width: 768px) {
-  .hero-r{
+  .hero-r {
     padding: 2rem 1rem;
   }
-  .hero-r .right, .hero-r .left{
+  .hero-r .right,
+  .hero-r .left {
     justify-content: center;
     align-content: center;
     width: auto;
     padding: 0 10px;
-}
-  .i{
-    color: var(--blue-darker);
+  }
+  .i,
+  .i-alt {
     height: 50px;
     width: 50px;
   }
-  .hero-r .h2{
+  .hero-r .h2 {
     font-size: var(--title3);
     font-weight: 300;
   }
-  .hero-r p{
+  .hero-r p {
     color: var(--gray-color-9);
     font-weight: 350;
     font-size: var(--regular-text);
     line-height: 22px;
   }
-
 }
-@media (min-width: 768px) and (max-width:1199px) {
-  .i{
-    color: var(--blue-darker);
+@media (min-width: 768px) and (max-width: 1199px) {
+  .i,
+  .i-alt {
     height: 140px;
     width: 140px;
   }
-  .hero-r .h2{
+  .hero-r .h2 {
     font-size: var(--title4);
-    
   }
-  .hero-r p{
+  .hero-r p {
     font-size: var(--regular-text);
     line-height: 30px;
   }

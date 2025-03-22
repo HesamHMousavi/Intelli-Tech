@@ -7,12 +7,12 @@ const HeroR = ({ isLeft, Icon, Title, Description }) => {
   return (
     <div className={`hero-r-con  ${isLeft ? "alt-bg" : ""}`}>
       <div className={`hero-r max-wid ${isLeft ? "is-left" : ""}`}>
-        <div className="left">
-          <h2 className="h2">{Title}</h2>
-          <p className="p-3">{Description}</p>
+        <div className='left'>
+          <h2 className='h2'>{Title}</h2>
+          <p className='p-1'>{Description}</p>
         </div>
-        <div className="right">
-          <Icon className="i" />
+        <div className='right'>
+          <Icon className={!isLeft ? "i" : "i-alt"} />
         </div>
       </div>
     </div>

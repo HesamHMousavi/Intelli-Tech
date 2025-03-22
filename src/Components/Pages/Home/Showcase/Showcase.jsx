@@ -1,7 +1,6 @@
 import React from "react";
 import "./Showcase.css";
 
-// import vid1 from "../../../../vids/vid1.mp4";
 import vid2 from "../../../../vids/vid2.mp4";
 import vid3 from "../../../../vids/vid3.mp4";
 import vid4 from "../../../../vids/vid4.mp4";

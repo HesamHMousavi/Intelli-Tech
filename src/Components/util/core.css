@@ -69,23 +69,23 @@
 .btn {
   outline: none;
   padding: 12px 16px;
-  border: 1px solid var(--blue-dark);
+  border: 1px solid var(--lw-text-color-2);
   font-family: "Roboto", sans-serif;
   font-weight: 400 !important;
   cursor: pointer;
   font-size: var(--small-text);
-  color: var(--blue-dark);
+  color: var(--lw-text-color-2);
   background-color: transparent;
   transition: var(--trans);
 }
 .btn-fill {
   border: none;
   color: var(--white-color);
-  background-color: var(--blue-dark);
+  background-color: var(--lw-text-color-1);
 }
 .btn:hover {
   color: var(--white-color);
-  background-color: var(--blue-dark);
+  background-color: var(--lw-text-color-2);
 }
 .btn-fill:hover {
   background-color: var(--white-color);
@@ -145,11 +145,11 @@
 .t-2 {
   font-size: 40px;
   text-align: center;
-  color: var(--lw-text-color-1);
+  /* color: var(--lw-text-color-1); */
 }
 .t-3 {
   font-size: 30px;
-  color: var(--lw-text-color-3);
+  /* color: var(--lw-text-color-3); */
 }
 .t-4 {
   font-size: 18px;

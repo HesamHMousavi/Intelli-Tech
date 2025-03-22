@@ -13,6 +13,40 @@
 .banner h1 {
   margin: 0;
   font-weight: 250;
+  /* color: white; */
+}
+
+.text-white {
+  color: var(--lw-text-color-9) !important;
+}
+
+.ranibow-text {
+  position: relative;
+  color: transparent;
+  background-image: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #33cc33,
+    #3399ff,
+    #9900cc,
+    #ff0066,
+    #ff0000
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbowFlow 2s linear infinite;
+  text-align: center;
+}
+@keyframes rainbowFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 .banner p {
   margin: 0;

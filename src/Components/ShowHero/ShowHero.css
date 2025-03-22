@@ -1,0 +1,86 @@
+.showhero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 40px;
+  align-items: center;
+  flex-direction: row;
+  margin: 5rem 0;
+}
+
+.showhero-container.reverse {
+  flex-direction: row-reverse; /* reverse: video on left */
+}
+
+.showhero-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.tag {
+  color: #7c3aed;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.showhero-left h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.primary-btn {
+  padding: 12px 24px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-btn {
+  padding: 12px 24px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.icons img {
+  height: 28px;
+  margin-right: 12px;
+}
+
+.showhero-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 640px;
+  display: flex;
+  justify-content: center;
+}
+
+.showhero-video {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}

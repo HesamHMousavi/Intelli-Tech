@@ -1,29 +1,114 @@
-import React, { useContext } from "react";
-import { ContentContext } from "../../Context/Content/ContentState";
-import Card from "./Card";
-import "../../Components/util/colors.css";
-import "../../Components/util/core.css";
+import React from "react";
 import "./Packages.css";
-const Packages = () => {
-  const { PackageItems } = useContext(ContentContext);
+
+const plans = [
+  {
+    name: "One Pager",
+    price: "£175",
+    description:
+      "Ideal for small business or start ups. Contains basic functionality and limited features.",
+    features: [
+      "1 Page",
+      "3 design revisions",
+      "One time domain fee",
+      "Free Hosting",
+      "Mobile friendly design",
+      "Social Media links",
+      "Google Maps",
+    ],
+  },
+  {
+    name: "Basic",
+    price: "£399",
+    description:
+      "Ideal for small business or start ups. Contains basic functionality and limited features.",
+    features: [
+      "Up to 5 Pages",
+      "5 design revisions",
+      "One time domain fee",
+      "Hosting for simple charges",
+      "Mobile friendly design",
+      "Social Media links",
+      "Contact form",
+      "Customer Reviews",
+      "Google Maps",
+    ],
+  },
+  {
+    name: "Standard",
+    price: "£799",
+    description:
+      "Designed for growing businesses, offering expanded features and additional tools to help you scale efficiently.",
+    features: [
+      "Up to 7 Pages",
+      "3 design revisions per page",
+      "One time domain fee",
+      "Hosting for simple charges",
+      "Mobile friendly design",
+      "Social Media links",
+      "Contact form",
+      "Whats app contact",
+      "Customer Reviews",
+      "Google Maps",
+      "Server/Database",
+      "Login System",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Professional",
+    price: "£1749",
+    description:
+      "Equipped with advanced features and premium support, ideal for enterprises maximising efficiency.",
+    features: [
+      "Up to 12 Pages",
+      "5 design revisions per page",
+      "One time domain fee",
+      "Hosting for simple charges",
+      "Mobile friendly design",
+      "Social Media links",
+      "Contact form",
+      "Customer Reviews",
+      "Whats app contact",
+      "Google Maps",
+      "Server/Database",
+      "Login System",
+      "Custom design",
+      "Payment System - Apple/Google pay",
+      "Source Code",
+    ],
+    highlighted: false,
+  },
+];
+
+const PricingPlans = () => {
   return (
-    <div className="packs-con">
-      <div className="max-wid2 text-con">
-        <h2>Website packages</h2>
-        <p>
-          Our starter website packages suit most small to medium size businesses
-          or organisations and include everything you need to get your business
-          online. They are custom designed, work great across different devices
-          and browsers and include a Content Management System (CMS), allowing
-          you to update your website at any time.
-        </p>
+    <>
+      <h1 className='t-1' style={{ marginTop: "10rem" }}>
+        Choose a Package
+      </h1>
+      <div className='pricing-container'>
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className={`plan-card ${plan.highlighted ? "highlighted" : ""}`}>
+            <h3>{plan.name}</h3>
+            <p className='description'>{plan.description}</p>
+            <div className='price'>
+              {plan.price}
+              <span> /one-time</span>
+            </div>
+            <button className='buy-btn'>Select Package</button>
+            <ul className='features'>
+              {plan.features.map((feature, i) => (
+                <li key={i}>✓ {feature}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
-      <div className="packs max-wid">
-        {PackageItems?.length > 0 &&
-          PackageItems.map((item, idx) => <Card Package={item} key={idx} />)}
-      </div>
-    </div>
+    </>
   );
 };
 
-export default Packages;
+export default PricingPlans;

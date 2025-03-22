@@ -34,8 +34,8 @@ const Home = () => {
       <Features />
       <ServiceHero />
 
-      <Reviews />
       <Showcase />
+      <Reviews />
       <Banner2
         height='140px'
         title='Ready to get Started? Choose a package suitable for your business'
