@@ -1,0 +1,127 @@
+/* Main container */
+.slider-container {
+  position: relative;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Fading effect on sides */
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Wrapper for scrolling cards */
+.scroll-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+/* Scrolling effect */
+.scrolling-cards {
+  display: flex;
+  gap: 16px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  width: max-content;
+  padding: 10px;
+}
+
+/* Top row moves left */
+.scroll-left .scrolling-cards {
+  animation: scrollLeft 30s linear infinite;
+}
+
+/* Bottom row moves right */
+.scroll-right .scrolling-cards {
+  animation: scrollRight 30s linear infinite;
+}
+
+/* Card styles */
+.slider-container .card {
+  min-width: 400px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid var(--lw-text-color-10);
+  text-align: start;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: normal; /* Allows wrapping inside the card */
+  word-wrap: break-word; /* Ensures long words wrap properly */
+}
+.slider-container .card h4 {
+  margin: 0;
+  text-align: start;
+}
+/* Circular avatar with gradient */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* margin: 0 auto 10px; */
+}
+.scrolling-cards:hover {
+  animation-play-state: paused;
+}
+
+.handle {
+  font-size: 12px;
+  color: gray;
+  margin: 0;
+}
+
+.text {
+  font-size: 18px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Infinite scrolling animation */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

@@ -1,0 +1,26 @@
+.service-hero {
+  display: flex;
+}
+.service-hero .hero-right,
+.service-hero .hero-left {
+  width: 50%;
+  height: 500px;
+}
+.service-hero .hero-left {
+  padding: 3rem !important;
+}
+.service-hero .hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service-hero .hero-right h1 {
+  font-weight: 200;
+  font-size: 450px;
+  font-family: "Playfair Display", serif;
+  text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+}
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}

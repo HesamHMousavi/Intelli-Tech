@@ -1,66 +1,63 @@
-.banner{
-    max-width: 100%;
-    background-color: var(--gray-color-4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding:  3rem;
-    margin: auto;
-    /* background: linear-gradient(to right, #386ca0, #3fb0da); */
-    background: linear-gradient(to right, #111111, #000000);
-    
+.banner {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
+  margin: auto;
+  background-color: black !important;
+  text-transform: uppercase;
 }
-.banner h1{
-    margin: 0;
-    font-weight:250;
+
+.banner h1 {
+  margin: 0;
+  font-weight: 250;
 }
-.banner p{
-    margin: 0;
-    margin-top: 2rem;
+.banner p {
+  margin: 0;
+  margin-top: 2rem;
 }
-.banner2{
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+.banner2 {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.banner2 h1{
-    margin: 0;
+.banner2 h1 {
+  margin: 0;
 }
-.banner2 button{
-    border: 1px solid var(--gray-color-4);
-    color:var(--gray-color-4);
+.banner2 button {
+  border: 1px solid var(--lw-text-color-6);
+  color: var(--lw-text-color-9);
 }
-.banner2 button:hover{
-    color: var(--blue-dark);
-    background-color:var(--gray-color-4);
+.banner2 button:hover {
+  color: black;
+  background-color: var(--lw-text-color-10);
 }
 @media (max-width: 768px) {
-    .banner{
-        padding: 3rem 1rem !important;
-    }
+  .banner {
+    padding: 3rem 1rem !important;
+  }
 }
 @media (max-width: 1199px) {
-    .banner{
-        height: auto !important;
-        padding: 3rem;
-    }
-    .banner p{
-        line-height: 24px;
-    }
-    .banner2 h1{
-        text-align: center;
-        padding: 0;
-    }
-    .banner2{
-        /* padding: 1rem; */
-        flex-direction: column !important;
-        height: auto !important;
-        max-height: none !important;
-    }
-    .banner2 button{
-        margin: 1rem 0 ;
-    }
+  .banner {
+    height: auto !important;
+    padding: 3rem;
+  }
+  .banner p {
+    line-height: 24px;
+  }
+  .banner2 h1 {
+    text-align: center;
+    padding: 0;
+  }
+  .banner2 {
+    /* padding: 1rem; */
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+  .banner2 button {
+    margin: 1rem 0;
+  }
 }
-
-

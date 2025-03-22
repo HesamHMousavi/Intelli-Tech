@@ -5,12 +5,13 @@ import "../util/colors.css";
 const Banner = ({ height = "80px", bg = "#f2f2f2", p, title }) => {
   return (
     <div
-      className="banner"
-      id="features"
-      style={{ height: height, backgroundColor: bg }}
-    >
-      <h1 className="title-2 max-wid text-white">{title}</h1>
-      {p && <p className="p-4 mar-top max-wid2 text-white">{p}</p>}
+      className='banner'
+      id='features'
+      style={{ height: height, backgroundColor: bg }}>
+      <h1 className='t-2 max-wid' style={{ color: "#888", fontWeight: 200 }}>
+        {title}
+      </h1>
+      {p && <p className='p-4 mar-top max-wid2 text-white'>{p}</p>}
     </div>
   );
 };

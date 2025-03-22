@@ -1,13 +1,102 @@
-*{
+* {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
-body{
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+.lw-btn {
+  position: relative;
+  padding: 10px 16px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid transparent;
+  outline: none;
+  font-weight: 300;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 80px;
+  transition: all 0.3s ease-in-out;
+  color: black;
+  overflow: hidden;
+}
+
+.lw-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 4px;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.lw-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1px;
+  padding: 1px;
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #ffeb00,
+    #47ff00,
+    #00ff91,
+    #00c3ff,
+    #4b00ff,
+    #ff00d4
+  );
+  background-size: 300% 300%;
+  animation: borderGlow 3s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  z-index: -1;
+}
+
+.lw-btn:hover::before {
+  transform: translateX(100%);
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.lw-btn-fill {
+  background-color: black;
+  color: var(--lw-text-color-10);
+  border: none;
+}
+.lw-btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--lw-text-color-10);
+}
+.lw-btn-none {
+  background-color: white;
+  border: none;
 }
 
