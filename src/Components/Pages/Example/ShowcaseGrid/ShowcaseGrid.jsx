@@ -11,58 +11,53 @@ const ShowcaseGrid = ({ items = [] }) => {
   items = [
     {
       video: vid1,
-      title: "title",
-      subtitle: "subtitle",
+      title: "Fléure",
+      subtitle: "Specialises at delivering bespoke furniture",
     },
     {
       video: vid2,
-      title: "title",
-      subtitle: "subtitle",
+      title: "Oak Forest Furniture",
+      subtitle: "Brings a unique style to bouquets",
     },
     {
       video: vid3,
-      title: "title",
-      subtitle: "subtitle",
+      title: "T333 Customs",
+      subtitle: "Creates custom vehicle plates with various styles",
     },
     {
       video: vid4,
-      title: "title",
-      subtitle: "subtitle",
+      title: "Litwebs",
+      subtitle: "The best at what they do",
     },
     {
       video: vid5,
-      title: "title",
-      subtitle: "subtitle",
+      title: "79 Jewellers",
+      subtitle: "One of the famous jewellers in yorkshire",
     },
     {
       video: vid6,
-      title: "title",
-      subtitle: "subtitle",
-    },
-    {
-      video: vid3,
-      title: "title",
-      subtitle: "subtitle",
+      title: "ZHR Nails",
+      subtitle: "When creativity meets technology, ZHR is born ",
     },
   ];
   return (
-    <section className='showcase-wrapper'>
-      <div className='showcase-header'>
+    <section className="showcase-wrapper">
+      <div className="showcase-header">
         <h2>Showcase</h2>
-        <p>Companies choose Magic UI to build their landing pages.</p>
+        <p>Companies choose us because we make the process easy</p>
       </div>
 
-      <div className='showcase-grid'>
+      <div className="showcase-grid">
         {items.map((item, index) => (
-          <div className='showcase-card' key={index}>
-            <div className='showcase-video-wrapper'>
+          <div className="showcase-card" key={index}>
+            <div className="showcase-video-wrapper">
               <video
                 src={item.video}
                 muted
                 loop
                 autoPlay
                 playsInline
-                className='showcase-video'
+                className="showcase-video"
               />
             </div>
             <h3>{item.title}</h3>

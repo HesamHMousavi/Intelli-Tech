@@ -104,6 +104,17 @@ const ContactForm = () => {
               // required
             />
           </div>
+          <div className="item1">
+            <input
+              disabled={status !== ""}
+              type="tel"
+              name="tel"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Phone Number"
+              // required
+            />
+          </div>
           <div className="item3">
             <textarea
               disabled={status !== ""}
@@ -115,27 +126,30 @@ const ContactForm = () => {
             />
           </div>
           <div className="item4">
-            <button disabled={status !== ""} className="btn" type="submit">
+            <button
+              disabled={status !== ""}
+              className="lw-btn lw-btn-outline"
+              type="submit"
+            >
               Send
             </button>
           </div>
         </form>
 
+        <h1 className="title-local title-2">Get in touch!</h1>
         <div className="socials">
-          <h1 className="title-local title-2">Get in touch!</h1>
           <div>
             <FaInstagram
-              size={40}
+              size={60}
               className="iconAll"
               onClick={() =>
                 window.open("https://www.instagram.com/litwebs/", "_blank")
               }
             />
-            <h1 className="title-1">@Litwebs </h1>
           </div>
           <div>
             <FaFacebook
-              size={40}
+              size={60}
               className="iconAll"
               onClick={() =>
                 window.open(
@@ -144,27 +158,24 @@ const ContactForm = () => {
                 )
               }
             />
-            <h1 className="title-1">@Litwebs </h1>
           </div>
           <div>
             <FaSnapchatGhost
-              size={40}
+              size={60}
               className="iconAll"
               onClick={() =>
                 window.open("https://www.snapchat.com/add/litwebs", "_blank")
               }
             />
-            <h1 className="title-1">@Litwebs </h1>
           </div>
           <div>
             <MdEmail
-              size={40}
+              size={60}
               className="iconAll"
               onClick={() =>
                 window.open("mailto:litwebs@outlook.co.uk", "_blank")
               }
             />
-            <h1 className="title-1">Litwebs@outlook.com</h1>
           </div>
         </div>
       </div>

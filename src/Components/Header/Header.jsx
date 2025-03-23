@@ -29,39 +29,39 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='header-con'>
-      <div className='header max-wid '>
-        <div className='left'></div>
-        <h3 className='child title-2'>Lit Webs</h3>
-        <div className='right'>
+    <div className="header-con">
+      <div className="header max-wid ">
+        <div className="left"></div>
+        <h3 className="child title-2">Lit Webs</h3>
+        <div className="right">
           <ul>
             <li>
-              <Link name='Home' link='' />
+              <Link name="Home" link="" />
             </li>
             <li>
-              <Link name='Packages' link='packages' />
+              <Link name="Packages" link="packages" />
             </li>
             <li>
-              <Link name='Process' link='process' />
+              <Link name="Process" link="process" />
             </li>
             <li>
-              <Link name='Our Work' link='example' />
+              <Link name="Our Work" link="example" />
             </li>
             <li>
-              <Link name='Contact us' link='contact' />
+              <Link name="Contact us" link="contact" />
             </li>
             <li>
               {Basket?.length > 0 && (
-                <p className='counter-tag'>{Basket.length}</p>
+                <p className="counter-tag">{Basket.length}</p>
               )}
-              <CiShoppingBasket
+              {/* <CiShoppingBasket
                 size={50}
                 color='#3B5670'
                 className={`icon-header ${
                   path.pathname.slice(1) === "checkout" ? "hovered" : ""
                 }`}
                 onClick={() => nav("/checkout")}
-              />
+              /> */}
             </li>
           </ul>
           <Menu setShow={setShow} isShow={isShow} />

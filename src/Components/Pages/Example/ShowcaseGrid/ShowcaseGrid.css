@@ -9,11 +9,6 @@
   margin-bottom: 8px;
 }
 
-.showcase-header p {
-  color: #666;
-  margin-bottom: 40px;
-}
-
 .showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,7 +28,7 @@
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .showcase-video {
@@ -43,12 +38,19 @@
 }
 
 .showcase-card h3 {
-  font-weight: 600;
-  margin-bottom: 6px;
-  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 0;
+  color: var(--lw-text-color-7);
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 .showcase-card p {
   font-size: 0.9rem;
-  color: #777;
+  margin: 5px 0 ;
+  color: var(--lw-text-color-9)
+}
+.showcase-header p {
+  color: #999;
+  margin-bottom: 40px;
 }
