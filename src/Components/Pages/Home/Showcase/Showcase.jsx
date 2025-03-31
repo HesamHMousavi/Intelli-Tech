@@ -28,7 +28,16 @@ const Showcase = () => {
         {projects.map((project, index) => (
           <div className='project-card' key={index}>
             <div className='card-inner'>
-              <video className='project-image' autoPlay loop muted>
+              <video
+                className='project-image'
+                autoPlay
+                loop
+                muted
+                playsInline
+                disablePictureInPicture
+                controls={false}
+                controlsList='nodownload nofullscreen noremoteplayback'
+                disableRemotePlayback>
                 <source src={project.vid} type='video/mp4' />
               </video>
               <div className='card-overlay'>

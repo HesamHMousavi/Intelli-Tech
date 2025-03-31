@@ -1,26 +1,83 @@
 .service-hero {
   display: flex;
+  flex-wrap: wrap;
 }
+
 .service-hero .hero-right,
 .service-hero .hero-left {
   width: 50%;
   height: 500px;
 }
+
 .service-hero .hero-left {
-  padding: 3rem !important;
+  padding: 3rem;
+  box-sizing: border-box;
 }
+
 .service-hero .hero-right {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .service-hero .hero-right h1 {
   font-weight: 200;
-  font-size: 450px;
+  font-size: clamp(80px, 20vw, 450px);
   font-family: "Playfair Display", serif;
   text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+  line-height: 1;
 }
+
 .btn-container {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .service-hero .hero-right h1 {
+    font-size: clamp(80px, 25vw, 300px);
+  }
+
+  .service-hero .hero-left {
+    padding: 2rem;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .service-hero {
+    flex-direction: column;
+  }
+
+  .service-hero .hero-left,
+  .service-hero .hero-right {
+    width: 100%;
+    height: auto;
+  }
+
+  .service-hero .hero-left {
+    padding: 1.5rem;
+  }
+
+  .service-hero .hero-right h1 {
+    font-size: clamp(60px, 25vw, 200px);
+  }
+
+  .btn-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Small devices */
+@media (max-width: 480px) {
+  .service-hero .hero-left {
+    padding: 1rem;
+  }
+
+  .service-hero .hero-right h1 {
+    font-size: clamp(40px, 30vw, 150px);
+  }
 }

@@ -1,17 +1,17 @@
 .nav {
-  height: 100%;
-  width: 300px; /* Adjust width */
-  background-color: var(--gray-color-4);
+  height: 100vh;
+  width: 100%;
   position: fixed;
-  top: 70px;
-  right: -300px; /* Start off-screen */
+  top: 50px;
+  right: -100%;
   z-index: 51;
-  transition: transform 0.3s ease-in-out; /* Smooth sliding */
+  transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
+
 .nav .item {
   display: flex;
   justify-content: space-between;
@@ -21,6 +21,7 @@
   transition: var(--trans);
   margin-top: 10px;
   padding-bottom: 5px;
+  padding: 10px;
 }
 .align {
   display: flex;
@@ -48,21 +49,21 @@
 .nav .link2 {
   font-weight: 300;
   width: 100%;
-  padding: 10px;
   font-size: var(--regular-text);
   text-decoration: none;
   color: var(--gray-color-9);
   transition: var(--trans);
 }
-.nav .link2:hover {
+.nav .item:hover {
   color: var(--blue-dark) !important;
+
   border-radius: 5px;
   background-color: var(--gray-color-5) !important;
 }
 
 /* When isShow is true, slide in */
 .nav.active {
-  transform: translateX(-300px);
+  transform: translateX(-100%);
 }
 
 /* When isShow is false, slide out */

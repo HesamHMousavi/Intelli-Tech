@@ -70,73 +70,73 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-wid">
-      <div className="form-con">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="item2">
+    <div className='max-wid'>
+      <div className='form-con'>
+        <form className='form' onSubmit={handleSubmit}>
+          <div className='item2'>
             <input
               disabled={status !== ""}
-              type="text"
-              name="firstName"
+              type='text'
+              name='firstName'
               value={formData.firstName}
               onChange={handleChange}
-              placeholder="First Name"
+              placeholder='First Name'
               // required
             />
             <input
               disabled={status !== ""}
-              type="text"
-              name="lastName"
+              type='text'
+              name='lastName'
               value={formData.lastName}
               onChange={handleChange}
-              placeholder="Last Name"
+              placeholder='Last Name'
               // required
             />
           </div>
-          <div className="item1">
+          <div className='item1'>
             <input
               disabled={status !== ""}
-              type="email"
-              name="email"
+              type='email'
+              name='email'
               value={formData.email}
               onChange={handleChange}
-              placeholder="Email Address"
+              placeholder='Email Address'
               // required
             />
           </div>
-          <div className="item3">
+          <div className='item3'>
             <textarea
               disabled={status !== ""}
-              name="message"
+              name='message'
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell us about your query"
+              placeholder='Tell us about your query'
               // required
             />
           </div>
-          <div className="item4">
-            <button disabled={status !== ""} className="btn" type="submit">
+          <div className='item4'>
+            <button disabled={status !== ""} className='btn' type='submit'>
               Send
             </button>
           </div>
         </form>
 
-        <div className="socials">
-          <h1 className="title-local title-2">Get in touch!</h1>
+        <div className='socials'>
+          <h1 className='title-local title-2'>Get in touch!</h1>
           <div>
             <FaInstagram
-              size={40}
-              className="iconAll"
+              size={25}
+              className='iconAll'
               onClick={() =>
                 window.open("https://www.instagram.com/litwebs/", "_blank")
               }
             />
-            <h1 className="title-1">@Litwebs </h1>
+            <h1 className='title-1'>@Litwebs </h1>
           </div>
           <div>
             <FaFacebook
-              size={40}
-              className="iconAll"
+              size={25}
+              className='iconAll'
               onClick={() =>
                 window.open(
                   "https://www.facebook.com/people/Lit-Webs/61572395225801/",
@@ -144,27 +144,27 @@ const ContactForm = () => {
                 )
               }
             />
-            <h1 className="title-1">@Litwebs </h1>
+            <h1 className='title-1'>@Litwebs </h1>
           </div>
           <div>
             <FaSnapchatGhost
-              size={40}
-              className="iconAll"
+              size={25}
+              className='iconAll'
               onClick={() =>
                 window.open("https://www.snapchat.com/add/litwebs", "_blank")
               }
             />
-            <h1 className="title-1">@Litwebs </h1>
+            <h1 className='title-1'>@Litwebs </h1>
           </div>
           <div>
             <MdEmail
-              size={40}
-              className="iconAll"
+              size={25}
+              className='iconAll'
               onClick={() =>
                 window.open("mailto:litwebs@outlook.co.uk", "_blank")
               }
             />
-            <h1 className="title-1">Litwebs@outlook.com</h1>
+            <h1 className='title-1'>Litwebs@outlook.com</h1>
           </div>
         </div>
       </div>

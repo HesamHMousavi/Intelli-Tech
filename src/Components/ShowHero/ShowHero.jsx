@@ -10,6 +10,16 @@ const ShowHero = ({
   return (
     <div className='max-wid'>
       <section className={`showhero-container ${reverse ? "reverse" : ""}`}>
+        <div className='showhero-right'>
+          <video
+            className='showhero-video'
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
         <div className='showhero-left'>
           <h1>{title}</h1>
           <p className='description'>{description}</p>
@@ -20,17 +30,6 @@ const ShowHero = ({
             Find out more
           </button>
           <button className='lw-btn lw-btn-outline'>Live Preview</button>
-        </div>
-
-        <div className='showhero-right'>
-          <video
-            className='showhero-video'
-            src={videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
         </div>
       </section>
     </div>

@@ -2,11 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
-  padding: 60px 40px;
+  gap: 20px;
+  padding: 2rem 15px;
   align-items: center;
   flex-direction: row;
-  margin: 5rem 0;
+  margin-bottom: 3rem;
 }
 
 .showhero-container.reverse {
@@ -81,6 +81,6 @@
 .showhero-video {
   width: 100%;
   max-width: 640px;
-  border-radius: 16px;
+  border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }

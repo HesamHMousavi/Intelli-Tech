@@ -6,7 +6,7 @@ import Menu from "./Menu";
 import Nav from "../nav/Nav";
 import "../util/core.css";
 import "./Header.css";
-import { CiShoppingBasket } from "react-icons/ci";
+// import { CiShoppingBasket } from "react-icons/ci";
 
 const Header = () => {
   const [isShow, setShow] = useState(false);
@@ -32,7 +32,7 @@ const Header = () => {
     <div className='header-con'>
       <div className='header max-wid '>
         <div className='left'></div>
-        <h3 className='child title-2'>Lit Webs</h3>
+        <h3 className='child local-header-title'>LIT WEBS</h3>
         <div className='right'>
           <ul>
             <li>
@@ -50,7 +50,7 @@ const Header = () => {
             <li>
               <Link name='Contact us' link='contact' />
             </li>
-            <li>
+            {/* <li>
               {Basket?.length > 0 && (
                 <p className='counter-tag'>{Basket.length}</p>
               )}
@@ -62,7 +62,7 @@ const Header = () => {
                 }`}
                 onClick={() => nav("/checkout")}
               />
-            </li>
+            </li> */}
           </ul>
           <Menu setShow={setShow} isShow={isShow} />
           <Nav isShow={isShow} />
