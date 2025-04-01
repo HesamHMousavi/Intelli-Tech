@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Packages.css";
 
 const plans = [
@@ -82,6 +83,7 @@ const plans = [
 ];
 
 const PricingPlans = () => {
+  const nav = useNavigate();
   return (
     <>
       <h1 className='t-1' style={{ marginTop: "10rem" }}>
@@ -98,7 +100,9 @@ const PricingPlans = () => {
               {plan.price}
               <span> /one-time</span>
             </div>
-            <button className='buy-btn'>Select Package</button>
+            <button className='buy-btn' onClick={() => nav("/contact")}>
+              Contact us
+            </button>
             <ul className='features'>
               {plan.features.map((feature, i) => (
                 <li key={i}>✓ {feature}</li>

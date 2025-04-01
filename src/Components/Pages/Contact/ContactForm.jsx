@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import "./Contact.css";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const ContactForm = () => {
   const [status, setStatus] = useState("");
@@ -115,7 +116,11 @@ const ContactForm = () => {
             />
           </div>
           <div className='item4'>
-            <button disabled={status !== ""} className='btn' type='submit'>
+            <button
+              style={{ minWidth: "120px" }}
+              disabled={status !== ""}
+              className='btn'
+              type='submit'>
               Send
             </button>
           </div>
@@ -123,6 +128,16 @@ const ContactForm = () => {
 
         <div className='socials'>
           <h1 className='title-local title-2'>Get in touch!</h1>
+          <div>
+            <FaPhoneAlt
+              size={25}
+              className='iconAll'
+              onClick={() =>
+                window.open("https://www.instagram.com/litwebs/", "_blank")
+              }
+            />
+            <h1 className='title-1'>+44 7309 843038</h1>
+          </div>
           <div>
             <FaInstagram
               size={25}
