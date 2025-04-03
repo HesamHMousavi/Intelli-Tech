@@ -15,7 +15,7 @@ const Banner = ({
       id='features'
       style={{ height: height, backgroundColor: bg }}>
       <h1
-        className={`t-2 max-wid ${isRanbow ? "ranibow-text" : "text-white"}`}
+        className={`t-4 max-wid ${isRanbow ? "ranibow-text" : "text-white"}`}
         style={{ fontWeight: 200 }}>
         {title}
       </h1>

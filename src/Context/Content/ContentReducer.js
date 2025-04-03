@@ -1,4 +1,10 @@
-import { SET_CONTENT, SET_BASKET, SET_TOTAL, SET_ALERTS } from "../TYPES";
+import {
+  SET_CONTENT,
+  SET_BASKET,
+  SET_TOTAL,
+  SET_ALERTS,
+  SET_PROJECT,
+} from "../TYPES";
 const AlertReducer = (state, action) => {
   switch (action.type) {
     default:
@@ -26,6 +32,12 @@ const AlertReducer = (state, action) => {
       return {
         ...state,
         Alerts: action.payload,
+      };
+    }
+    case SET_PROJECT: {
+      return {
+        ...state,
+        SelectedProject: action.payload,
       };
     }
   }

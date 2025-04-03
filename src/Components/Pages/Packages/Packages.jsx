@@ -17,22 +17,25 @@ const Packages = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className='packages'>
+    <div className="packages">
       <Header />
-      <Banner height='200px' title='Packages' isRanbow={true} />
+      <Banner height="200px" title="Packages" isRanbow={true} />
       <PackageCards />
       <Features />
       <Banner2
-        height='140px'
-        title='Ready to get Started? Choose a package suitable for your business'
+        height="140px"
+        title="Ready to get Started? Choose a package suitable for your business"
         btn={{ name: "Get Started!", onClick: () => window.scrollTo(0, 0) }}
       />
       <ShowHero project={Projects[0]} />
       <ShowHero reverse={true} project={Projects[1]} />
       <ShowHero project={Projects[2]} />
+      <ShowHero reverse={true} project={Projects[6]} />
+      <ShowHero project={Projects[7]} />
+      <ShowHero reverse={true} project={Projects[5]} />
       <Banner2
-        height='140px'
-        title='Decided? Choose a package suitable for your requirements'
+        height="140px"
+        title="Decided? Choose a package suitable for your requirements"
         btn={{ name: "Get Started!", onClick: () => window.scrollTo(0, 0) }}
       />
       <FAQ1 data={data.slice(0, 8)} />

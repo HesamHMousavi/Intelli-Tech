@@ -91,9 +91,9 @@
   border-radius: 50%;
   /* margin: 0 auto 10px; */
 }
-.scrolling-cards:hover {
+/* .scrolling-cards:hover {
   animation-play-state: paused;
-}
+} */
 
 .handle {
   font-size: 12px;

@@ -1,42 +1,57 @@
 import { createContext, useReducer, useEffect, useRef } from "react";
 import ContentReducer from "./ContentReducer";
-import { SET_CONTENT, SET_BASKET, SET_TOTAL, SET_ALERTS } from "../TYPES";
+import { useLocation } from "react-router-dom";
+import {
+  SET_CONTENT,
+  SET_BASKET,
+  SET_TOTAL,
+  SET_ALERTS,
+  SET_PROJECT,
+} from "../TYPES";
 import { v4 as uuidv4 } from "uuid";
-import LW from "../../vids/LW.mp4";
+// import LW from "../../vids/LW.mp4";
 import FLEURE from "../../vids/FLEURE.mp4";
 import OF from "../../vids/OF.mp4";
 import T3 from "../../vids/T3.mp4";
 import vid79 from "../../vids/79.mp4";
 import ZHR from "../../vids/ZHR.mp4";
+import HIU from "../../vids/HIU.mp4";
+import DON from "../../vids/DON.mp4";
+import VV from "../../vids/VV.mp4";
 
 export const ContentContext = createContext();
 
 export const ContextState = (props) => {
+  const path = useLocation();
   const alertRef = useRef("");
   const initialState = {
     Projects: [
       {
+        id: 1,
         video: vid79,
         title: "79 Jewllers",
-        url: "https://fleure.co.uk/",
+        url: "https://79jewellers.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
       },
       {
+        id: 2,
         video: FLEURE,
         title: "Fleure",
-        url: "https://fleure.co.uk/",
+        url: "https://fleure.co.uk",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
       },
       {
+        id: 3,
         video: OF,
         title: "Oak Forest",
-        url: "https://oakforestofyorkshire.com/",
+        url: "https://oakforestofyorkshire.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
       },
       {
+        id: 4,
         video: T3,
         title: "T333 Customs",
         url: "https://litwebs.co.uk",
@@ -44,17 +59,43 @@ export const ContextState = (props) => {
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
       },
 
+      // {
+      //   id: 5,
+      //   video: LW,
+      //   title: "Litwebs",
+      //   url: "https://litwebs.co.uk",
+      //   description:
+      //     "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+      // },
       {
-        video: LW,
-        title: "Litwebs",
-        url: "https://litwebs.co.uk",
+        id: 6,
+        video: ZHR,
+        title: "ZHR",
+        url: "https://zhrnails.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
       },
       {
-        video: ZHR,
-        title: "ZHR",
-        url: "https://zhrnails.com",
+        id: 7,
+        video: HIU,
+        title: "Hair it up",
+        url: "https://hair-it-uo-elegance.lovable.app/",
+        description:
+          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+      },
+      {
+        id: 8,
+        video: DON,
+        title: "Driving Donny",
+        url: "https://preview--driving-donney-online.lovable.app/",
+        description:
+          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+      },
+      {
+        id: 9,
+        video: VV,
+        title: "Driving Donny",
+        url: "https://vape-vogue-bazaar.lovable.app/",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
       },
@@ -63,6 +104,10 @@ export const ContextState = (props) => {
     Basket: [],
     Alerts: [],
     Content: {},
+    SelectedProject: localStorage.getItem("pro")
+      ? JSON.parse(localStorage.getItem("pro"))
+      : {},
+
     Total: 0,
   };
   const [state, dispatch] = useReducer(ContentReducer, initialState);
@@ -70,6 +115,18 @@ export const ContextState = (props) => {
   useEffect(() => {
     alertRef.current = state.Alerts;
   }, [state]);
+
+  useEffect(() => {
+    if (path.pathname !== "/project") {
+      setPro({});
+      localStorage.removeItem("pro");
+    }
+  }, [path]);
+
+  const setPro = (project) => {
+    localStorage.setItem("pro", JSON.stringify(project));
+    dispatch({ type: SET_PROJECT, payload: project });
+  };
 
   const SetContent = (content) => {
     dispatch({ type: SET_CONTENT, payload: content });
@@ -226,13 +283,16 @@ export const ContextState = (props) => {
         Basket: state.Basket,
         Total: state.Total,
         Alerts: state.Alerts,
+        SelectedProject: state.SelectedProject,
+        setPro: setPro,
         UpdateBasket: UpdateBasket,
         SetContent: SetContent,
         CreateAlert: CreateAlert,
         RemoveAlert: RemoveAlert,
         AddToBasket: AddToBasket,
         RemoveFromBasket: RemoveFromBasket,
-      }}>
+      }}
+    >
       {props.children}
     </ContentContext.Provider>
   );

@@ -1,43 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import vid1 from "../../../vids/OF.mp4";
+import Banner2 from "../../Banner/Banner2";
+import { ContentContext } from "../../../Context/Content/ContentState";
+import Showcase from "../Home/Showcase/Showcase";
 import "./Project.css";
 
 const Project = () => {
-  const item = {
-    video: vid1,
-    title: "Fleure",
-    subtitle: "https://litwebs.co.uk",
-  };
+  const nav = useNavigate();
+  const path = useLocation();
+  const { SelectedProject } = useContext(ContentContext);
   useEffect(() => {
+    if (Object.keys(SelectedProject).length === 0) {
+      nav("/");
+    }
     window.scrollTo(0, 0);
-  }, []);
+    // eslint-disable-next-line
+  }, [path]);
+  const openUri = () => {
+    window.open(SelectedProject.url, "_blank");
+  };
   return (
     <div>
       <Header />
-      <main className='project'>
-        <h1>{item.title}</h1>
-        <div className='showcase-card-project'>
-          <h4>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-            aspernatur iure commodi, labore architecto nihil veniam tenetur
-            impedit dolore totam. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Molestiae, iure.
-          </h4>
-          <div className='showcase-video-wrapper-project'>
+      <main className="project">
+        <h1>{SelectedProject.title}</h1>
+        <div className="showcase-card-project" onClick={openUri}>
+          <div className="showcase-video-wrapper-project">
             <video
-              src={item.video}
+              src={SelectedProject.video}
               muted
               loop
               autoPlay
               playsInline
-              className='showcase-video-project'
+              className="showcase-video-project"
             />
           </div>
-          <h2>Fleure</h2>
+          <h4>{SelectedProject.description}</h4>
+          <h2 onClick={openUri}>
+            Visit <strong>{SelectedProject.title}</strong>
+          </h2>
         </div>
       </main>
+      <Banner2
+        height="140px"
+        title="Ready to get Started? Choose a package suitable for your business"
+        btn={{ name: "Get Started!", onClick: () => nav("/packages") }}
+      />
+      <Showcase title="More Projects" indexStart={3} indexEnd={6}/>
       <Footer />
     </div>
   );

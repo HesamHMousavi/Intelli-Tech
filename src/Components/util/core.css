@@ -152,7 +152,8 @@
   /* color: var(--lw-text-color-3); */
 }
 .t-4 {
-  font-size: 18px;
+  font-size: 20px;
+  text-align: center;
   font-weight: 300 !important;
 }
 
@@ -178,5 +179,6 @@
   margin-top: 3rem;
 }
 .mt-4 {
+  
   margin-top: 4rem;
 }
