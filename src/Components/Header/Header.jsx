@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { ContentContext } from "../../Context/Content/ContentState";
+import React, { useState, useEffect } from "react";
 import Link from "../util/Link/Link";
 import Menu from "./Menu";
 import Nav from "../nav/Nav";
@@ -10,18 +8,13 @@ import "./Header.css";
 
 const Header = () => {
   const [isShow, setShow] = useState(false);
-  const nav = useNavigate();
-  const path = useLocation();
-  const { Basket } = useContext(ContentContext);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setShow(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
-
     // Call handleResize initially to set the correct state
     handleResize();
 

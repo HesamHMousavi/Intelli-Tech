@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import { ContentContext } from "../../Context/Content/ContentState";
+import React, {  useEffect } from "react";
 import { BiSolidChevronRight } from "react-icons/bi";
-import { CiShoppingBasket } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import "./Nav.css";
 import "../util/core.css";
 import "../util/colors.css";
 
 const Nav = ({ isShow }) => {
-  const { Basket } = useContext(ContentContext);
 
   // Lock scroll when nav is active
   useEffect(() => {

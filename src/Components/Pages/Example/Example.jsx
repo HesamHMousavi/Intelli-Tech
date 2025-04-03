@@ -1,22 +1,15 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import Banner from "../../Banner/Banner";
 import Banner2 from "../../Banner/Banner2";
 import Header from "../../Header/Header";
 import Features from "../../Features/Features";
 import FAQHome from "../../Pages/Home/FAQHome/FAQHome";
 import Footer from "../../Footer/Footer";
-import { ContentContext } from "../../../Context/Content/ContentState";
 import data from "../../../Context/FAQS";
 import "./Example.css";
 import ShowcaseGrid from "./ShowcaseGrid/ShowcaseGrid";
 
 const Example = () => {
-  let { Projects } = useContext(ContentContext);
-  Projects = Projects.map((item) => ({
-    ...item, // Spread the existing properties
-    SubTitle: "", // Update the SubTitle property
-  }));
-
   //Scroll to top
   useEffect(() => {
     window.scrollTo(0, 0);

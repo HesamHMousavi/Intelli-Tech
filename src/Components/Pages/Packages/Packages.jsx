@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Header from "../../Header/Header";
 import Banner from "../../Banner/Banner";
 import Banner2 from "../../Banner/Banner2";
@@ -9,11 +9,10 @@ import Footer from "../../Footer/Footer";
 import data from "../../../Context/FAQS";
 import "./Packages.css";
 import ShowHero from "../../ShowHero/ShowHero";
-import vid1 from "../../../vids/vid4.mp4";
-import vid2 from "../../../vids/vid2.mp4";
-import vid3 from "../../../vids/vid3.mp4";
+import { ContentContext } from "../../../Context/Content/ContentState";
 
 const Packages = () => {
+  const { Projects } = useContext(ContentContext);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,9 +27,9 @@ const Packages = () => {
         title='Ready to get Started? Choose a package suitable for your business'
         btn={{ name: "Get Started!", onClick: () => window.scrollTo(0, 0) }}
       />
-      <ShowHero videoSrc={vid1} />
-      <ShowHero reverse={true} videoSrc={vid2} />
-      <ShowHero videoSrc={vid3} />
+      <ShowHero project={Projects[0]} />
+      <ShowHero reverse={true} project={Projects[1]} />
+      <ShowHero project={Projects[2]} />
       <Banner2
         height='140px'
         title='Decided? Choose a package suitable for your requirements'

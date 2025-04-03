@@ -1,7 +1,9 @@
 import React from "react";
 import "./SeviceHero.css";
+import { useNavigate } from "react-router-dom";
 
 const SeviceHero = () => {
+  const nav = useNavigate();
   return (
     <div className='max-wid'>
       <div className='service-hero'>
@@ -22,8 +24,16 @@ const SeviceHero = () => {
             your business.
           </p>
           <div className='btn-container'>
-            <button className='lw-btn lw-btn-fill'>Get started</button>
-            <button className=' lw-btn lw-btn-outline'>Learn More</button>
+            <button
+              className='lw-btn lw-btn-fill'
+              onClick={() => nav("/packages")}>
+              Get started
+            </button>
+            <button
+              className=' lw-btn lw-btn-outline'
+              onClick={() => nav("/process")}>
+              Learn More
+            </button>
           </div>
         </div>
         <div className='hero-right'>

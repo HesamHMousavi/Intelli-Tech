@@ -1,55 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
+  <!-- Changed to en-GB for UK targeting -->
   <head>
+    <!-- Basic Meta -->
     <meta charset="utf-8" />
-    <!-- Favicon -->
-    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
 
-    <!-- Responsive meta tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon Suite -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/logo.png" />
+    <link
+      rel="manifest"
+      href="%PUBLIC_URL%/site.webmanifest"
+      crossorigin="use-credentials" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/logo.png" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
 
-    <!-- Theme color -->
-    <meta name="theme-color" content="#F8F8F8" />
-
-    <!-- SEO meta description -->
+    <!-- Primary Meta -->
+    <title>Lit Webs | Premium Web Design & Development</title>
     <meta
       name="description"
-      content="Lit Webs builds custom websites for businesses, delivering high-quality design and development." />
+      content="UK-based web design agency creating fast, SEO-optimised websites. Specializing in React development, e-commerce solutions, and responsive design." />
+    <meta
+      name="keywords"
+      content="UK web design, UK website development, React developers, e-commerce websites, responsive design" />
+    <meta name="author" content="Lit Webs" />
+    <meta name="geo.region" content="GB" />
+    <meta name="geo.placename" content="UK" />
 
-    <!-- Open Graph tags for social media -->
-    <meta property="og:title" content="Lit Webs - Custom Web Development" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://litwebs.co.uk/" />
+    <meta
+      property="og:title"
+      content="Lit Webs | Premium Web Design & Development" />
     <meta
       property="og:description"
-      content="Boost your online presence with a stunning, modern website built to your specifications." />
-    <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
-    <meta property="og:url" content="https://www.example.com" />
+      content="UK-based web design agency creating fast, SEO-optimised websites for businesses across the UK." />
+    <meta property="og:image" content="https://litwebs.co.uk/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Lit Webs" />
 
-    <!-- Twitter Card tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lit Webs - Custom Web Development" />
-    <meta
-      name="twitter:description"
-      content="Boost your online presence with a stunning, modern website built to your specifications." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" />
+    <meta name="twitter:creator" content="@litwebs" />
+    <meta name="twitter:site" content="@litwebs" />
 
-    <!-- Canonical link to handle duplicate content -->
-    <link rel="canonical" href="https://www.example.com" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload Critical Resources -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet" />
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link rel="preload" href="%PUBLIC_URL%/css/main.css" as="style" />
 
-    <!-- Apple touch icon -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    <!-- Theme Color -->
+    <meta
+      name="theme-color"
+      content="#FFFFFF"
+      media="(prefers-color-scheme: light)" />
+    <meta
+      name="theme-color"
+      content="#121212"
+      media="(prefers-color-scheme: dark)" />
 
-    <!-- Title -->
-    <title>Lit Webs</title>
+    <!-- Canonical & Alternate URLs -->
+    <link rel="canonical" href="https://litwebs.co.uk/" />
+    <link rel="alternate" hreflang="en-GB" href="https://litwebs.co.uk/" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Lit Webs",
+        "url": "https://litwebs.co.uk",
+        "logo": "https://litwebs.co.uk/logo.png",
+        "description": "Professional web design and development services in UK",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Yorkshire",
+          "addressCountry": "GB"
+        },
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "telephone": "+442079460000"
+      }
+    </script>
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div class="noscript-warning">
+        <h1>JavaScript Required</h1>
+        <p>
+          Our website requires JavaScript to function properly. Please enable it
+          in your browser settings or
+          <a href="https://www.enable-javascript.com/" rel="noopener"
+            >learn how to enable JavaScript</a
+          >.
+        </p>
+        <div class="noscript-content">
+          <h2>About Lit Webs</h2>
+          <p>
+            We build custom websites for businesses the UK, specialising in:
+          </p>
+          <ul>
+            <li>Responsive Web Design</li>
+            <li>React Development</li>
+            <li>SEO Optimisation</li>
+            <li>E-commerce Solutions</li>
+          </ul>
+          <p>Contact us at: litwebs@outlook.com</p>
+        </div>
+      </div>
+    </noscript>
+
     <div id="root"></div>
+
+    <!-- Pre-rendered content for SEO -->
+    <div style="display: none" aria-hidden="true">
+      <h1>Web Design London - Lit Webs</h1>
+      <p>Professional website development services in the UK</p>
+      <a href="/#/example">Examples</a>
+      <a href="/#/packages">Packages</a>
+      <a href="/#/process">Our process</a>
+      <a href="/#/contact">Contact Us</a>
+      <address>United Kingdom</address>
+    </div>
   </body>
 </html>

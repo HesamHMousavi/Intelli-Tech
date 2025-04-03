@@ -7,8 +7,6 @@ import Packages from "./Components/Pages/Packages/Packages";
 import Contact from "./Components/Pages/Contact/Contact";
 import FAQS from "./Components/Pages/FAQS/FAQS";
 import Project from "./Components/Pages/Project/Project";
-// import Checkout from "./Components/Pages/Checkout/Checkout";
-// import Success from "./Components/Pages/Checkout/Success";
 import AlertList from "./Components/util/Alert/AlertList";
 
 function App() {
@@ -25,8 +23,6 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/faqs' element={<FAQS />} />
           <Route path='/project' element={<Project />} />
-          {/* <Route path='/checkout' element={<Checkout />} /> */}
-          {/* <Route path='/success' element={<Success />} /> */}
         </Routes>
       </>
     </Router>
