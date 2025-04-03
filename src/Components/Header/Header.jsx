@@ -4,6 +4,7 @@ import Menu from "./Menu";
 import Nav from "../nav/Nav";
 import "../util/core.css";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 // import { CiShoppingBasket } from "react-icons/ci";
 
 const Header = () => {
@@ -20,12 +21,18 @@ const Header = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const nav = useNavigate();
 
   return (
     <div className='header-con'>
       <div className='header max-wid '>
         <div className='left'></div>
-        <h3 className='child local-header-title'>LIT WEBS</h3>
+        <h3
+          className='child local-header-title'
+          style={{ cursor: "pointer" }}
+          onClick={() => nav("/")}>
+          LIT WEBS
+        </h3>
         <div className='right'>
           <ul>
             <li>
@@ -43,19 +50,6 @@ const Header = () => {
             <li>
               <Link name='Contact us' link='contact' />
             </li>
-            {/* <li>
-              {Basket?.length > 0 && (
-                <p className='counter-tag'>{Basket.length}</p>
-              )}
-              <CiShoppingBasket
-                size={50}
-                color='#3B5670'
-                className={`icon-header ${
-                  path.pathname.slice(1) === "checkout" ? "hovered" : ""
-                }`}
-                onClick={() => nav("/checkout")}
-              />
-            </li> */}
           </ul>
           <Menu setShow={setShow} isShow={isShow} />
           <Nav isShow={isShow} />

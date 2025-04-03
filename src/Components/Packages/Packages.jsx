@@ -7,7 +7,7 @@ const plans = [
     name: "One Pager",
     price: "£175",
     description:
-      "Ideal for small business or start ups. Contains basic functionality and limited features.",
+      "A clean, single-page site for getting online quickly and affordably. Great for startups and simple projects.",
     features: [
       "1 Page",
       "3 design revisions",
@@ -87,7 +87,7 @@ const PricingPlans = () => {
   return (
     <>
       <h1 className='t-1' style={{ marginTop: "10rem" }}>
-        Choose a Package
+        Choose A Package
       </h1>
       <div className='pricing-container'>
         {plans.map((plan, index) => (

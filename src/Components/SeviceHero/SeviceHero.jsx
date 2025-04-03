@@ -8,9 +8,10 @@ const SeviceHero = () => {
     <div className='max-wid'>
       <div className='service-hero'>
         <div className='hero-left'>
-          <h1 className='t-1' style={{ textAlign: "start" }}>
+          <h1 className='t-2' style={{ textAlign: "start" }}>
             {" "}
-            Why choose our services
+            {/* Why choose our services` */}
+            WHY CHOOSE OUR SERVICES?
           </h1>
           <p className='p-2'>
             At our core, we believe your website should be a true reflection of

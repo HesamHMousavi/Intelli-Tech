@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { BiSolidChevronRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import "./Nav.css";
@@ -6,7 +6,6 @@ import "../util/core.css";
 import "../util/colors.css";
 
 const Nav = ({ isShow }) => {
-
   // Lock scroll when nav is active
   useEffect(() => {
     const body = document.body;
@@ -26,7 +25,7 @@ const Nav = ({ isShow }) => {
   return (
     <div className={`nav ${isShow ? "active" : "hidden"}`}>
       <div className='item '>
-        <Link className='link2' to='/' onClick={() => window.scrollTo(0, 0)}>
+        <Link className='link2' to='/' onClick={() => window.location.reload()}>
           Home
         </Link>
         <BiSolidChevronRight className='icon' />

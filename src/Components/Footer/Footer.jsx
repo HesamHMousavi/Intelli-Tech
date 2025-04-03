@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
 import { Link as LinkRouter } from "react-router-dom";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -16,6 +17,13 @@ const Footer = () => {
         <div className='item'>
           <img src={img} alt='' className='soft-shadow' />
           <div className='socials-footer'>
+            <FaLinkedin
+              className='icon'
+              size={26}
+              onClick={() =>
+                window.open("https://www.linkedin.com/company/litwebs/", "_blank")
+              }
+            />
             <FaInstagram
               className='icon'
               size={26}

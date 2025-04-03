@@ -25,7 +25,7 @@ const Home = () => {
       <Header />
       <HomeView />
       <Banner
-        title='Helping UK Businesses reach their potential'
+        title='Helping Businesses reach their potential'
         height='200px'
       />
       <Features />

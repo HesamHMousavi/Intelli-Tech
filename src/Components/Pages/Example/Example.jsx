@@ -18,7 +18,7 @@ const Example = () => {
     <div className='example'>
       <Header />
       <Banner title='Our Work' height='200px' />
-      <h1 className='t-1'>Examples of our projects</h1>
+      <h1 className='t-1'>Examples of OUR PROJECTS</h1>
       <ShowcaseGrid />
       <Banner2
         height='140px'

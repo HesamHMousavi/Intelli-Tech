@@ -29,7 +29,7 @@ export const ContextState = (props) => {
       {
         id: 1,
         video: vid79,
-        title: "79 Jewllers",
+        title: "79 Jewellers",
         url: "https://79jewellers.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
@@ -37,7 +37,7 @@ export const ContextState = (props) => {
       {
         id: 2,
         video: FLEURE,
-        title: "Fleure",
+        title: "Fleuré",
         url: "https://fleure.co.uk",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
@@ -45,7 +45,7 @@ export const ContextState = (props) => {
       {
         id: 3,
         video: OF,
-        title: "Oak Forest",
+        title: "Oak Forest of Yorkshire",
         url: "https://oakforestofyorkshire.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
@@ -70,7 +70,7 @@ export const ContextState = (props) => {
       {
         id: 6,
         video: ZHR,
-        title: "ZHR",
+        title: "ZHR Nailes",
         url: "https://zhrnails.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
@@ -78,7 +78,7 @@ export const ContextState = (props) => {
       {
         id: 7,
         video: HIU,
-        title: "Hair it up",
+        title: "Hair It Up",
         url: "https://hair-it-uo-elegance.lovable.app/",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
@@ -291,8 +291,7 @@ export const ContextState = (props) => {
         RemoveAlert: RemoveAlert,
         AddToBasket: AddToBasket,
         RemoveFromBasket: RemoveFromBasket,
-      }}
-    >
+      }}>
       {props.children}
     </ContentContext.Provider>
   );

@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import "./Contact.css";
+import { FaLinkedin } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const ContactForm = () => {
@@ -128,57 +129,71 @@ const ContactForm = () => {
 
         <div className='socials'>
           <h1 className='title-local title-2'>Get in touch!</h1>
+          <div
+            onClick={() =>
+              window.open("https://www.linkedin.com/company/litwebs/", "_blank")
+            }>
+            <FaLinkedin
+              size={20}
+              className='iconAll'
+              color='var(--gray-color-9)'
+            />
+            <h1 className='title-1'>@ Litwebs </h1>
+          </div>
+          <div
+            onClick={() =>
+              window.open("https://www.instagram.com/litwebs/", "_blank")
+            }>
+            <FaInstagram
+              size={20}
+              className='iconAll'
+              color='var(--gray-color-9)'
+            />
+            <h1 className='title-1'>@ Litwebs </h1>
+          </div>
+          <div
+            onClick={() =>
+              window.open(
+                "https://www.facebook.com/people/Lit-Webs/61572395225801/",
+                "_blank"
+              )
+            }>
+            <FaFacebook
+              size={20}
+              className='iconAll'
+              color='var(--gray-color-9)'
+            />
+            <h1 className='title-1'>@ Litwebs </h1>
+          </div>
+          <div
+            onClick={() =>
+              window.open("https://www.snapchat.com/add/litwebs", "_blank")
+            }>
+            <FaSnapchatGhost
+              size={20}
+              className='iconAll'
+              color='var(--gray-color-9)'
+            />
+            <h1 className='title-1'>@ Litwebs </h1>
+          </div>
           <div>
             <FaPhoneAlt
-              size={25}
+              size={20}
               className='iconAll'
-              onClick={() =>
-                window.open("https://www.instagram.com/litwebs/", "_blank")
-              }
+              color='var(--gray-color-9)'
             />
             <h1 className='title-1'>+44 7309 843038</h1>
           </div>
-          <div>
-            <FaInstagram
-              size={25}
-              className='iconAll'
-              onClick={() =>
-                window.open("https://www.instagram.com/litwebs/", "_blank")
-              }
-            />
-            <h1 className='title-1'>@Litwebs </h1>
-          </div>
-          <div>
-            <FaFacebook
-              size={25}
-              className='iconAll'
-              onClick={() =>
-                window.open(
-                  "https://www.facebook.com/people/Lit-Webs/61572395225801/",
-                  "_blank"
-                )
-              }
-            />
-            <h1 className='title-1'>@Litwebs </h1>
-          </div>
-          <div>
-            <FaSnapchatGhost
-              size={25}
-              className='iconAll'
-              onClick={() =>
-                window.open("https://www.snapchat.com/add/litwebs", "_blank")
-              }
-            />
-            <h1 className='title-1'>@Litwebs </h1>
-          </div>
-          <div>
+          <div
+            onClick={() =>
+              window.open("mailto:litwebs@outlook.co.uk", "_blank")
+            }>
             <MdEmail
-              size={25}
+              size={20}
               className='iconAll'
-              onClick={() =>
-                window.open("mailto:litwebs@outlook.co.uk", "_blank")
-              }
+              color='var(--gray-color-9)'
             />
+
             <h1 className='title-1'>Litwebs@outlook.com</h1>
           </div>
         </div>
