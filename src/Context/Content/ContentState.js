@@ -25,14 +25,14 @@ export const ContextState = (props) => {
   const path = useLocation();
   const alertRef = useRef("");
   const initialState = {
-    Projects: [
+    projects: [
       {
         id: 1,
         video: vid79,
         title: "79 Jewellers",
         url: "https://79jewellers.com",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "A sleek and elegant site for a luxury jewellery brand, built to reflect premium aesthetics.",
       },
       {
         id: 2,
@@ -40,7 +40,7 @@ export const ContextState = (props) => {
         title: "Fleuré",
         url: "https://fleure.co.uk",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "Modern and minimal design for a premium skincare and wellness shop.",
       },
       {
         id: 3,
@@ -48,7 +48,7 @@ export const ContextState = (props) => {
         title: "Oak Forest of Yorkshire",
         url: "https://oakforestofyorkshire.com",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "An informative site promoting reforestation projects in Yorkshire with an eco-conscious design.",
       },
       {
         id: 4,
@@ -56,24 +56,15 @@ export const ContextState = (props) => {
         title: "T333 Customs",
         url: "https://litwebs.co.uk",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "Bold and custom-styled website for a car modification and detailing service.",
       },
-
-      // {
-      //   id: 5,
-      //   video: LW,
-      //   title: "Litwebs",
-      //   url: "https://litwebs.co.uk",
-      //   description:
-      //     "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
-      // },
       {
         id: 6,
         video: ZHR,
         title: "ZHR Nails",
         url: "https://zhrnails.com",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "Chic and vibrant web presence for a modern nail salon and beauty studio.",
       },
       {
         id: 7,
@@ -81,7 +72,7 @@ export const ContextState = (props) => {
         title: "Hair It Up",
         url: "https://hair-it-uo-elegance.lovable.app/",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "Smooth user experience for a mobile hair styling and booking service.",
       },
       {
         id: 8,
@@ -89,7 +80,7 @@ export const ContextState = (props) => {
         title: "Driving Donny",
         url: "https://preview--driving-donney-online.lovable.app/",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "A local driving school platform with booking features and a clean layout.",
       },
       {
         id: 9,
@@ -97,10 +88,9 @@ export const ContextState = (props) => {
         title: "Build Pro",
         url: "https://vape-vogue-bazaar.lovable.app/",
         description:
-          "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
+          "Professional landing page tailored for a construction and renovation business.",
       },
     ],
-
     Basket: [],
     Alerts: [],
     Content: {},
