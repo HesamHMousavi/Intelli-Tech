@@ -70,7 +70,7 @@ export const ContextState = (props) => {
       {
         id: 6,
         video: ZHR,
-        title: "ZHR Nailes",
+        title: "ZHR Nails",
         url: "https://zhrnails.com",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
@@ -94,7 +94,7 @@ export const ContextState = (props) => {
       {
         id: 9,
         video: VV,
-        title: "Driving Donny",
+        title: "Build Pro",
         url: "https://vape-vogue-bazaar.lovable.app/",
         description:
           "A professional landing page template designed for developer tools and APIs.A professional landing page template designed for developer tools and APIs. A professional landing page template designed for developer tools and APIs.",
