@@ -25,7 +25,7 @@ export const ContextState = (props) => {
   const path = useLocation();
   const alertRef = useRef("");
   const initialState = {
-    projects: [
+    Projects: [
       {
         id: 1,
         video: vid79,
@@ -281,7 +281,8 @@ export const ContextState = (props) => {
         RemoveAlert: RemoveAlert,
         AddToBasket: AddToBasket,
         RemoveFromBasket: RemoveFromBasket,
-      }}>
+      }}
+    >
       {props.children}
     </ContentContext.Provider>
   );

@@ -6,6 +6,7 @@ import "./Showcase.css";
 const Showcase = ({ title = "Showcase", indexStart = 0, indexEnd = 6 }) => {
   const nav = useNavigate();
   const { Projects, setPro } = useContext(ContentContext);
+  console.log(Projects);
   const onClick = (project) => {
     setPro(project);
     nav("/project");
