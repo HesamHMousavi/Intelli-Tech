@@ -5,7 +5,7 @@ import "./Packages.css";
 const plans = [
   {
     name: "One Pager",
-    price: "£175",
+    price: "£9.99",
     description:
       "A clean, single-page site for getting online quickly and affordably. Great for startups and simple projects.",
     features: [
@@ -20,7 +20,7 @@ const plans = [
   },
   {
     name: "Basic",
-    price: "£399",
+    price: "19.99",
     description:
       "Ideal for small business or start ups. Contains basic functionality and limited features.",
     features: [
@@ -37,7 +37,7 @@ const plans = [
   },
   {
     name: "Standard",
-    price: "£799",
+    price: "34.99",
     description:
       "Designed for growing businesses, offering expanded features and additional tools to help you scale efficiently.",
     features: [
@@ -51,14 +51,13 @@ const plans = [
       "Whats app contact",
       "Customer Reviews",
       "Google Maps",
-      "Server/Database",
-      "Login System",
+      "Payment System - Apple/Google pay",
     ],
     highlighted: true,
   },
   {
     name: "Professional",
-    price: "£1749",
+    price: "59.99",
     description:
       "Equipped with advanced features and premium support, ideal for enterprises maximising efficiency.",
     features: [
@@ -72,7 +71,6 @@ const plans = [
       "Customer Reviews",
       "Whats app contact",
       "Google Maps",
-      "Server/Database",
       "Login System",
       "Custom design",
       "Payment System - Apple/Google pay",
@@ -98,7 +96,7 @@ const PricingPlans = () => {
             <p className='description'>{plan.description}</p>
             <div className='price'>
               {plan.price}
-              <span> /one-time</span>
+              <span> /monthly</span>
             </div>
             <button className='buy-btn' onClick={() => nav("/contact")}>
               Contact us
