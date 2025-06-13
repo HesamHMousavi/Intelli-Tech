@@ -20,7 +20,7 @@ const plans = [
   },
   {
     name: "Basic",
-    price: "19.99",
+    price: "£19.99",
     description:
       "Ideal for small business or start ups. Contains basic functionality and limited features.",
     features: [
@@ -37,7 +37,7 @@ const plans = [
   },
   {
     name: "Standard",
-    price: "34.99",
+    price: "£34.99",
     description:
       "Designed for growing businesses, offering expanded features and additional tools to help you scale efficiently.",
     features: [
@@ -57,7 +57,7 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "59.99",
+    price: "£59.99",
     description:
       "Equipped with advanced features and premium support, ideal for enterprises maximising efficiency.",
     features: [
